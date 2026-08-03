@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIEP | Sodbridge Industry Experience Program</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#800080",
+                      "secondary": "#16BE45",
+                      "surface": "#fbf8ff",
+                      "on-surface": "#10193d",
+                      "text-muted": "#7B83AD",
+                      "background": "#fbf8ff",
+                      "bg-offwhite": "#F8F9FC",
+                      "outline-variant": "#cfc2d7",
+                      "primary-container": "#800080",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#ececff",
+                      "surface-container-low": "#f3f2ff",
+                      "surface-container-highest": "#dde1ff",
+                      "on-surface-variant": "#4c4354"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "2xl": "24px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "unit": "8px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Sora"],
+                      "headline-xl": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-mono": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(128, 0, 128, 0.05);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(22, 190, 69, 0.3);
+            transform: translateY(-4px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-purple { text-shadow: 0 0 15px rgba(128, 0, 128, 0.2); }
+        .text-glow-green { text-shadow: 0 0 15px rgba(22, 190, 69, 0.2); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fbf8ff; }
+        ::-webkit-scrollbar-thumb { background: #cfc2d7; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #800080; }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(251, 248, 255, 0) 0%, rgba(251, 248, 255, 0.9) 100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-white overflow-x-hidden">
+  
+
+<!-- Mobile Navigation Menu -->
+<div class="fixed inset-0 z-[60] bg-white translate-x-full md:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center px-margin-mobile h-20 border-b border-outline-variant/30">
+        <div class="flex items-center gap-2">
+        <img alt="Sodbridge Academy Logo" class="h-8 w-8 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+        </div>
+        <button class="p-2 text-on-surface" id="close-menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        </div>
+
+    <nav class="flex flex-col gap-8 p-10 mt-4">
+        <a class="text-2xl font-bold text-primary border-l-4 border-primary pl-4" href="index.html">Home</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="about.html" onclick="toggleMenu()">About</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#schools" onclick="toggleMenu()">Schools</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#how-it-works" onclick="toggleMenu()">Process</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#siep" onclick="toggleMenu()">SIEP</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#instructors" onclick="toggleMenu()">Instructors</a>
+        <div class="mt-8">
+        <a href="application_page.html" class="w-full btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg">Apply Now</a>
+        </div>
+    </nav>
+
+    </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+        <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+            <img alt="Sodbridge Academy Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain" src="assets/img/logo_main_plain.png"/>
+           <a href="index.html">
+ <span class="text-headline-md font-bold tracking-tighter text-primary">SODBRIDGE ACADEMY</span></a>
+            </div>
+            <span class="text-[10px] md:text-xs font-label-sm text-on-surface-variant uppercase tracking-widest pl-10 md:pl-12 -mt-1">A Subsidiary of Sodbridge</span>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary text-label-lg font-bold transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#schools">Schools</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#how-it-works">Process</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#siep">SIEP</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#instructors">Instructors</a>
+        </nav>
+        <div class="flex items-center gap-4">
+        <a href="application_page.html" class="hidden md:block btn bg-primary text-white px-6 py-2 rounded-lg font-bold text-label-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">Apply Now</a>
+        <button aria-label="Open menu" class="md:hidden p-2 text-primary" id="open-menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        </div>
+    </div>
+</header>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-[100] bg-white translate-x-full transition-transform duration-500 ease-in-out md:hidden" id="mobile-menu">
+<div class="flex flex-col h-full p-6">
+<div class="flex justify-between items-center mb-12">
+<div class="flex items-center gap-2">
+<img alt="Sodbridge Academy Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox9Nh1JygXlUlvq2Mra5v-uZkQi0rSZR1S7oCnbier6lmFKNW6SUR3umCJRARXPgeKXWxJYUxXAoua-op_IWZtyceos_JCayI3SA3G1GSd1udbmWBPnzGHWoWmD5Om1xNQ5eLDXGoHwf1SGwRrDzatzKAehG7jxoxonviFe301YoMhG5T-6rALdLFkt_BTRlPmkRt_fbAEpwXCZKz3nepUmMp5jWI5DFfpr1X0dGHu0rQworQ35mun-M3_tIKWMIVnoBnU4rFpOA"/>
+<span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+</div>
+<button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-colors" id="menu-close">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6 text-2xl font-bold text-on-surface">
+<a class="flex items-center justify-between hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#">
+                Overview
+                <span class="material-symbols-outlined text-primary/30">chevron_right</span>
+</a>
+<a class="flex items-center justify-between hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#">
+                Pathways
+                <span class="material-symbols-outlined text-primary/30">chevron_right</span>
+</a>
+<a class="flex items-center justify-between hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#">
+                Labs
+                <span class="material-symbols-outlined text-primary/30">chevron_right</span>
+</a>
+<a class="flex items-center justify-between hover:text-primary transition-colors py-2 border-b border-outline-variant/20" href="#">
+                Admissions
+                <span class="material-symbols-outlined text-primary/30">chevron_right</span>
+</a>
+</nav>
+<div class="mt-auto pt-10">
+<button class="w-full bg-primary text-white py-4 rounded-2xl font-bold text-lg shadow-xl mb-4">
+                Apply Now
+            </button>
+<p class="text-center text-sm text-on-surface-variant font-medium uppercase tracking-widest">Cohort '25 Now Open</p>
+</div>
+</div>
+</div>
+
+
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-105" src="assets/img/siep1.avif"/>
+<div class="absolute inset-0 bg-white/20 z-10"></div>
+<div class="absolute inset-0 hero-gradient z-[11]"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest">Accelerate Your Future</span>
+<h1 class="font-display-lg text-4xl md:text-7xl mb-8 text-on-surface leading-tight font-extrabold">
+                Build More Than Skills.<br/>
+<span class="text-secondary text-glow-green">Build Real Impact.</span>
+</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 font-medium">
+                Sodbridge Industry Experience Program (SIEP) bridges the gap between academic brilliance and professional mastery through high-stakes product development.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<a class="w-full md:w-auto bg-primary text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:scale-105 transition-transform flex items-center justify-center gap-2" href="application_page.html">
+                    Start Your Journey
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+ <a class="w-full md:w-auto glass-card px-10 py-4 rounded-xl font-bold text-on-surface hover:bg-white/60 transition-colors" href="#ecosystem">
+                    Explore SIEP
+                </a> 
+</div>
+</div>
+</section>
+
+
+<!-- What is SIEP? -->
+<section class="py-24">
+
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+
+<div>
+
+<span class="uppercase tracking-[0.2em] text-primary font-bold">
+
+ABOUT SIEP
+
+</span>
+
+<h2 class="font-headline-xl mt-4 mb-8">
+
+Turning Education Into Experience.
+
+</h2>
+
+<p class="font-body-lg text-on-surface-variant mb-6">
+
+The Sodbridge Industry Experience Program (SIEP) is the practical execution arm of Sodbridge Academy.
+
+Rather than stopping at classroom learning, SIEP enables selected participants to gain meaningful industry experience by contributing to products, research, analytics, open-source initiatives, and client projects.
+
+</p>
+
+<p class="font-body-lg text-on-surface-variant mb-6">
+
+Participants work in multidisciplinary teams alongside mentors, applying technical skills to solve real-world challenges while building portfolios that demonstrate measurable impact.
+
+</p>
+
+<div class="grid grid-cols-2 gap-6 mt-10">
+
+<div>
+
+<h3 class="text-4xl font-bold text-primary">
+
+4+
+
+</h3>
+
+<p>
+
+Innovation Labs
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-4xl font-bold text-primary">
+
+Real
+
+</h3>
+
+<p>
+
+Products & Research
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-4xl font-bold text-primary">
+
+Industry
+
+</h3>
+
+<p>
+
+Workflows
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-4xl font-bold text-primary">
+
+Global
+
+</h3>
+
+<p>
+
+Career Readiness
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<img
+
+src="assets/img/siep_team.jpg"
+
+class="rounded-3xl shadow-2xl"
+
+>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SIEP Pillars -->
+<section class="py-24 bg-bg-offwhite">
+
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+<div class="text-center max-w-3xl mx-auto mb-16">
+
+<span class="uppercase tracking-[0.2em] text-primary font-bold">
+
+WHY SIEP
+
+</span>
+
+<h2 class="font-headline-xl mt-4 mb-6">
+
+Bridging The Gap Between Learning And Industry.
+
+</h2>
+
+<p class="font-body-lg text-on-surface-variant">
+
+Many graduates complete courses but never gain meaningful experience.
+
+SIEP was created to bridge that gap by giving participants opportunities to build products, conduct research, analyse data, collaborate with multidisciplinary teams, and contribute to initiatives that create measurable value.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<div class="glass-card p-8 rounded-2xl">
+
+<span class="material-symbols-outlined text-primary text-5xl">
+
+construction
+
+</span>
+
+<h3 class="mt-6 font-headline-md">
+
+Build
+
+</h3>
+
+<p class="mt-3">
+
+Create products, tools and digital solutions that solve real problems.
+
+</p>
+
+</div>
+
+<div class="glass-card p-8 rounded-2xl">
+
+<span class="material-symbols-outlined text-primary text-5xl">
+
+analytics
+
+</span>
+
+<h3 class="mt-6 font-headline-md">
+
+Research
+
+</h3>
+
+<p class="mt-3">
+
+Generate credible insights, dashboards and publications that inform decisions.
+
+</p>
+
+</div>
+
+<div class="glass-card p-8 rounded-2xl">
+
+<span class="material-symbols-outlined text-primary text-5xl">
+
+groups
+
+</span>
+
+<h3 class="mt-6 font-headline-md">
+
+Collaborate
+
+</h3>
+
+<p class="mt-3">
+
+Experience Agile teamwork, code reviews, design critiques and sprint planning.
+
+</p>
+
+</div>
+
+<div class="glass-card p-8 rounded-2xl">
+
+<span class="material-symbols-outlined text-primary text-5xl">
+
+rocket_launch
+
+</span>
+
+<h3 class="mt-6 font-headline-md">
+
+Launch
+
+</h3>
+
+<p class="mt-3">
+
+Graduate with experience, confidence and a portfolio employers can verify.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Experience -->
+
+<!-- Experience -->
+<section class="py-24 bg-white">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+
+      <div class="max-w-xl">
+        <h2 class="font-headline-xl text-on-surface mb-4">
+          What You'll Experience
+        </h2>
+
+        <p class="text-on-surface-variant font-body-lg font-medium">
+          SIEP immerses you in a professional product environment where you build, collaborate, deliver, and prepare for industry—not through simulations, but through meaningful work.
+        </p>
+      </div>
+
+      <span class="text-primary font-bold text-sm border-b-2 border-primary/30 pb-2 tracking-widest uppercase">
+        06 Core Experiences
+      </span>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+      <!-- Product Development -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-primary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
+          Build Real Products
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Contribute to internal products, startup ideas, client solutions, and digital platforms that solve real problems. Your work becomes part of solutions used beyond the classroom.
+        </p>
+
+      </div>
+
+      <!-- Team Collaboration -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-secondary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-secondary transition-colors">
+          Collaborate Like Industry Teams
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Work in multidisciplinary teams using Agile workflows, Git, design reviews, sprint planning, stand-ups, and collaborative problem-solving across software, data, design, and cybersecurity.
+        </p>
+
+      </div>
+
+      <!-- Mentorship -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-primary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
+          Learn From Industry Mentors
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Receive continuous mentorship through technical reviews, pair programming, design critiques, career coaching, and feedback from experienced professionals.
+        </p>
+
+      </div>
+
+      <!-- Ownership -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-secondary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-secondary transition-colors">
+          Take Ownership
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Take responsibility for assigned features, meet deadlines, present progress, and contribute meaningfully to product goals.
+        </p>
+
+      </div>
+
+      <!-- Portfolio -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-primary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
+          Build a Career Portfolio
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Graduate with verified projects, GitHub contributions, case studies, research publications, dashboards, presentations, and documented industry experience.
+        </p>
+
+      </div>
+
+      <!-- Leadership -->
+      <div class="glass-card p-10 rounded-2xl border-l-4 border-l-secondary group bg-surface/40 hover:bg-white/80 transition-all">
+
+        <h4 class="font-headline-md text-on-surface mb-4 group-hover:text-secondary transition-colors">
+          Grow Into Leadership
+        </h4>
+
+        <p class="text-on-surface-variant font-medium">
+          Outstanding contributors may become SIEP Fellows, lead project teams, mentor future cohorts, receive performance-based recognition, and be considered for strategic initiatives and future opportunities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Innovation Areas -->
+
+<!-- SIEP Ecosystem -->
+<section class="py-24 bg-surface-container-low" id="ecosystem">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="font-label-lg uppercase tracking-[0.25em] text-primary">
+        OUR ECOSYSTEM
+      </span>
+
+      <h2 class="font-headline-xl text-on-surface mt-4 mb-6">
+        Build Products. Generate Insights. Create Impact.
+      </h2>
+
+      <p class="font-body-lg text-on-surface-variant">
+        Every SIEP participant contributes to one or more innovation
+        initiatives. These initiatives combine software engineering,
+        design, cybersecurity, artificial intelligence, research,
+        and analytics to create products and insights that solve
+        real-world problems across Africa.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Products -->
+      <div class="glass-card p-10 rounded-3xl bg-white border border-outline-variant/30">
+
+        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-primary text-3xl">
+            inventory_2
+          </span>
+        </div>
+
+        <h3 class="font-headline-md text-on-surface mb-4">
+          Digital Products
+        </h3>
+
+        <p class="text-on-surface-variant mb-6">
+          Fellows contribute to internal products, client platforms,
+          AI applications, education technology, business tools,
+          and startup-ready solutions that serve real users.
+        </p>
+
+        <div class="space-y-3 text-sm">
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Luminex Platform</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Internal Product Development</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Client Solutions</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Future Startup Ventures</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Research -->
+      <div class="glass-card p-10 rounded-3xl bg-white border border-outline-variant/30">
+
+        <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-secondary text-3xl">
+            analytics
+          </span>
+        </div>
+
+        <h3 class="font-headline-md text-on-surface mb-4">
+          Research & Analytics
+        </h3>
+
+        <p class="text-on-surface-variant mb-6">
+          Data Fellows produce public datasets, dashboards,
+          quarterly reports, and workforce insights that support
+          businesses, nonprofits, governments, and development partners.
+        </p>
+
+        <div class="space-y-3 text-sm">
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>SPA — Sodbridge People Analytics</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>SMP — Sodbridge Market Pulse</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Interactive Dashboards</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="material-symbols-outlined text-growth-green">check_circle</span>
+            <span>Quarterly Insight Reports</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Statement -->
+
+    <div class="mt-16 glass-card rounded-3xl p-10 bg-primary text-white text-center">
+
+      <h3 class="font-headline-md mb-5">
+        One Program. Multiple Opportunities.
+      </h3>
+
+      <p class="font-body-lg max-w-4xl mx-auto text-white/90">
+        Whether you're a software engineer, designer, data professional,
+        AI practitioner, or cybersecurity specialist, SIEP provides an
+        environment where you collaborate across disciplines to build
+        products, publish insights, solve meaningful problems, and create
+        measurable impact.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Journey -->
+<section class="py-24 bg-white">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+        <div class="text-center mb-16">
+
+            <span class="font-label-lg uppercase tracking-[0.25em] text-primary">
+                Career Progression
+            </span>
+
+            <h2 class="font-headline-xl text-on-surface mt-4 mb-6 uppercase">
+                Your Journey Through SIEP
+            </h2>
+
+            <p class="text-on-surface-variant font-body-lg max-w-3xl mx-auto">
+                Every participant joins SIEP as an
+                <strong>SIEP Associate</strong>.
+                Fellowship is not something you apply for—it is earned through
+                consistent technical excellence, ownership, collaboration,
+                leadership, professionalism, and measurable impact.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Associate -->
+
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-t-primary bg-bg-offwhite/50 flex flex-col">
+
+                <div class="flex justify-between items-start mb-8">
+
+                    <div>
+
+                        <h3 class="text-headline-lg text-on-surface mb-2">
+                            SIEP Associate
+                        </h3>
+
+                        <p class="text-primary font-bold uppercase tracking-wider text-sm">
+                            Every accepted participant begins here.
+                        </p>
+
+                    </div>
+
+                    <span class="material-symbols-outlined text-5xl text-primary/30">
+                        groups
+                    </span>
+
+                </div>
+
+                <p class="text-on-surface-variant mb-8 leading-relaxed">
+
+                    Associates work inside multidisciplinary product teams,
+                    contributing to software, design, cybersecurity, research,
+                    analytics, and innovation initiatives while building
+                    professional experience through meaningful work.
+
+                </p>
+
+                <h4 class="font-bold text-on-surface mb-4 uppercase text-sm tracking-wider">
+                    Typical Responsibilities
+                </h4>
+
+                <ul class="space-y-4 mb-10">
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Build product features and project deliverables</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Participate in Agile sprints and stand-ups</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Collaborate across engineering, design, and data teams</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Receive mentorship and technical reviews</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Develop a professional portfolio and documented experience</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <span>Contribute to products, dashboards, research, or client solutions</span>
+                    </li>
+
+                </ul>
+
+                <div class="mt-auto">
+
+                    <div class="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold uppercase text-[11px] tracking-widest mb-6">
+                        Your Starting Point
+                    </div>
+
+                    <a href="application_page.html">
+                        <button class="w-full border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">
+                            Begin Your Journey
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Fellow -->
+
+            <div class="glass-card p-12 rounded-3xl border-t-4 border-t-secondary bg-bg-offwhite/50 flex flex-col">
+
+                <div class="flex justify-between items-start mb-8">
+
+                    <div>
+
+                        <h3 class="text-headline-lg text-on-surface mb-2">
+                            SIEP Fellow
+                        </h3>
+
+                        <p class="text-secondary font-bold uppercase tracking-wider text-sm">
+                            Recognition for exceptional contributors.
+                        </p>
+
+                    </div>
+
+                    <span class="material-symbols-outlined text-5xl text-secondary/30">
+                        workspace_premium
+                    </span>
+
+                </div>
+
+                <p class="text-on-surface-variant mb-8 leading-relaxed">
+
+                    Fellowship is awarded to Associates who consistently
+                    demonstrate outstanding technical ability, ownership,
+                    collaboration, initiative, leadership, professionalism,
+                    and measurable contribution throughout the program.
+
+                </p>
+
+                <h4 class="font-bold text-on-surface mb-4 uppercase text-sm tracking-wider">
+                    Additional Responsibilities
+                </h4>
+
+                <ul class="space-y-4 mb-10">
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Lead project teams and strategic initiatives</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Review code, designs, analyses, or research outputs</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Mentor Associates and support new cohorts</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Present demos, reports, and product showcases</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Represent SIEP during webinars and community events</span>
+                    </li>
+
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-secondary">stars</span>
+                        <span>Become eligible for leadership roles, referrals, and merit-based stipends</span>
+                    </li>
+
+                </ul>
+
+                <div class="mt-auto">
+
+                    <div class="inline-block px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-bold uppercase text-[11px] tracking-widest mb-6">
+                        Earned Through Performance
+                    </div>
+
+                    <a href="application_page.html">
+                        <button class="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg">
+                            Strive for Excellence
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Performance Evaluation -->
+
+        <div class="mt-16 glass-card p-10 rounded-3xl bg-surface-container-low border border-outline-variant/30">
+
+            <h3 class="font-headline-md text-on-surface mb-5">
+                How Performance is Evaluated
+            </h3>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <div>
+                    <h4 class="font-bold text-primary mb-2">Technical Excellence</h4>
+                    <p class="text-sm text-on-surface-variant">Quality of work and problem-solving ability.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-primary mb-2">Ownership</h4>
+                    <p class="text-sm text-on-surface-variant">Reliability, accountability and initiative.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-primary mb-2">Collaboration</h4>
+                    <p class="text-sm text-on-surface-variant">Teamwork, communication and professionalism.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-primary mb-2">Impact</h4>
+                    <p class="text-sm text-on-surface-variant">Contribution to products, research and innovation.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Career Outcomes -->
+
+        <div class="mt-16 text-center">
+
+            <h3 class="font-headline-lg text-on-surface mb-8">
+                Career Outcomes
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3">business_center</span>
+                    <h4 class="font-bold mb-2">Employment</h4>
+                    <p class="text-sm text-on-surface-variant">
+                        Opportunities within Sodbridge and external organisations.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3">folder</span>
+                    <h4 class="font-bold mb-2">Professional Portfolio</h4>
+                    <p class="text-sm text-on-surface-variant">
+                        Real products, research, dashboards and documented experience.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3">recommend</span>
+                    <h4 class="font-bold mb-2">References</h4>
+                    <p class="text-sm text-on-surface-variant">
+                        Recommendation letters and career referrals for outstanding contributors.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3">rocket_launch</span>
+                    <h4 class="font-bold mb-2">Future Growth</h4>
+                    <p class="text-sm text-on-surface-variant">
+                        Leadership opportunities, future cohorts, entrepreneurship, and continued collaboration.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="py-24 bg-bg-offwhite border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-on-surface mb-4 uppercase tracking-tight">BENEFITS</h2>
+<p class="text-on-surface-variant font-medium text-lg">Benefits include</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Industry Experience</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Portfolio Projects</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Mentorship</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Cross-functional Collaboration</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Professional Network</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Leadership Development</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Innovation Culture</span>
+</div>
+<div class="glass-card p-6 rounded-2xl bg-white/60 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+<span class="font-body-md font-bold text-on-surface">Performance-Based Recognition</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-on-surface mb-4 uppercase tracking-tight">WHO CAN APPLY?</h2>
+<p class="text-on-surface-variant font-medium text-lg">Applicants should</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Be enrolled in Sodbridge Academy</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Successfully complete the required learning pathway</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Demonstrate technical competence</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Maintain professionalism</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Participate consistently</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Complete assessments and projects</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Work effectively in teams</span>
+</div>
+<div class="flex items-start gap-4 p-4">
+<span class="material-symbols-outlined text-secondary shrink-0">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-medium">Show initiative and willingness to learn</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy -->
+<section class="py-32 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10">
+<div class="w-20 h-20 mx-auto mb-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-4xl">format_quote</span>
+</div>
+<h2 class="font-headline-xl text-3xl md:text-5xl text-white italic leading-tight max-w-4xl mx-auto font-medium">
+                "We don't just prepare students for the future. We give them opportunities to help <span class="text-secondary font-bold">build it</span>."
+            </h2>
+<div class="mt-8 flex items-center justify-center gap-2">
+<div class="h-[1px] w-12 bg-white/40"></div>
+<span class="font-bold text-white tracking-widest uppercase text-xs">The SIEP Philosophy</span>
+<div class="h-[1px] w-12 bg-white/40"></div>
+</div>
+</div>
+</section>
+
+<!-- Journey Timeline -->
+<section class="py-24 bg-bg-offwhite">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-xl text-on-surface mb-16 text-center uppercase tracking-tight">The Journey</h2>
+<div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-primary/20 before:via-primary before:to-primary/20"><!-- Step 1 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-white text-primary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">1</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Application</h4></div></div><!-- Step 2 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-secondary bg-white text-secondary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Foundations Program</h4></div></div><!-- Step 3 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-white text-primary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Weekly Assessments</h4></div></div><!-- Step 4 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-secondary bg-white text-secondary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">4</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Mini Capstone</h4></div></div><!-- Step 5 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-white text-primary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">5</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Advanced Program</h4></div></div><!-- Step 6 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-secondary bg-white text-secondary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">6</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Final Assessments &amp; Major Project</h4></div></div><!-- Step 7 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-white text-primary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">7</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Selection into SIEP</h4></div></div><!-- Step 8 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-secondary bg-white text-secondary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">8</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Associate</h4></div></div><!-- Step 9 --><div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"><div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-white text-primary font-bold shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">9</div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl bg-white/80 border-outline-variant/30"><h4 class="font-bold text-on-surface uppercase">Outstanding Contributors become Fellows</h4></div></div></div>
+</div>
+</section>
+
+
+<!-- Final CTA -->
+<section class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="relative bg-white border-2 border-primary rounded-[3rem] p-12 md:p-24 overflow-hidden text-center shadow-2xl">
+<div class="relative z-10">
+<h2 class="font-display-lg text-3xl md:text-6xl text-on-surface mb-8 uppercase tracking-tighter">Earn Your Place.</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 font-medium">
+                    Admission is highly competitive. We seek thinkers, builders, and visionaries ready to redefine industry standards.
+                </p>
+                <a href="application_page.html">
+                <button class="bg-secondary text-white px-12 py-5 rounded-2xl font-extrabold text-xl hover:scale-105 transition-transform shadow-xl">
+                    Apply Now For The New Cohort
+                </button></a>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white w-full py-20 border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-4 max-w-sm">
+    <div class="flex items-center gap-4">
+        <img alt="Sodbridge Academy Logo" class="h-12 w-12 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-2xl font-extrabold tracking-tight text-primary uppercase">SODBRIDGE ACADEMY</span>
+    </div><p class="text-lg font-medium text-on-surface-variant leading-relaxed">Empowering futures, unleashing innovations. A subsidiary of Sodbridge, dedicated to high-impact technical education across Africa.</p>
+
+ <div class="flex gap-4 mt-2">
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/company/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M20.447 20.452H16.89V14.87c0-1.332-.027-3.045-1.857-3.045-1.859 0-2.143 1.451-2.143 2.949v5.678H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M23.5 6.2a2.99 2.99 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A2.99 2.99 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 2.99 2.99 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a2.99 2.99 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+</svg>
+
+</a>
+
+<!-- Facebook -->
+<a href="https://web.facebook.com/sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M22 12A10 10 0 1 0 10.5 21.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+</svg>
+
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838A4 4 0 1 0 12 16a4 4 0 0 0 0-8zm6.406-2.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Academy</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="data_school.html">Data School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="dev_school.html">Dev School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="design_school.">Design School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="cyber_school.html">Cyber School</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="siep.html">SIEP</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://sodbridge.com">Visit Sodbridge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html#faqs">FAQ</a>
+</div>
+</div>
+</div>
+
+<div class="pt-8 mt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<p class="text-sm font-medium text-on-surface-variant">
+© <span id="currentYear"></span> Sodbridge Academy. Empowering futures, unleashing innovations.
+</p>
+
+<div class="flex gap-8">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy_policy.html">Privacy Policy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="terms_of_service.html">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+  <!-- Whats App Icon -->
+  <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#800080","ctaText":"Chat with us now","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"+2348145666602","welcomeMessage":"Hello","zIndex":999999,"btnColorScheme":"light"};
+          var wa_widgetSetting = {"title":"Customer Support","subTitle":"Typically replies within 1hr","headerBackgroundColor":"#800080","headerColorScheme":"dark","greetingText":"Hi there! \nHow may we help you?","ctaText":"Start Chat","btnColor":"#1A1A1A","cornerRadius":40,"welcomeMessage":"Hello","btnColorScheme":"light","brandImage":"https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg","darkHeaderColorScheme":{"title":"#ffffff","subTitle":"#4F4F4F"}};  
+          window.onload = () => {
+            _waEmbed(wa_btnSetting, wa_widgetSetting);
+          };
+  </script>
+
+<script>
+      // Year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Navigation transparency on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('bg-white/95');
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('bg-white/95');
+            header.classList.remove('shadow-md');
+        }
+    });
+
+    // Mobile menu toggle logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('translate-x-full');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Subtle button interactions
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            if (button.classList.contains('bg-primary') || button.classList.contains('bg-secondary')) {
+                button.style.transform = 'translateY(-2px)';
+            }
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body></html>

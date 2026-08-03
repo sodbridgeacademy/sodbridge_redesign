@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | Sodbirdge Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#800080", // Adjusted for light mode (Electric Violet)
+                    "on-primary": "#ffffff",
+                    "secondary": "#008a2e", // Adjusted for light mode (Growth Green)
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf8ff",
+                    "surface": "#ffffff",
+                    "on-surface": "#1d1b20",
+                    "surface-variant": "#f4f0f6",
+                    "on-surface-variant": "#49454f",
+                    "outline": "#79747e",
+                    "outline-variant": "#c9c4d0",
+                    "surface-container": "#f3eff4",
+                    "surface-container-low": "#f7f2fa",
+                    "surface-container-high": "#ece6f0",
+                    "surface-container-highest": "#e6e1e5",
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "sora": ["Sora", "sans-serif"],
+                    "hanken": ["Hanken Grotesk", "sans-serif"],
+                    "headline-xl": ["Sora"],
+                    "display-lg-mobile": ["Sora"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-lg": ["Sora"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg": ["Sora"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    
+<style>
+        body {
+            background-color: #fbf8ff;
+            color: #1d1b20;
+            font-family: 'Hanken Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #800080 0%, #008a2e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+
+<!-- Mobile Navigation Menu -->
+<div class="fixed inset-0 z-[60] bg-white translate-x-full md:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center px-margin-mobile h-20 border-b border-outline-variant/30">
+        <div class="flex items-center gap-2">
+        <img alt="Sodbridge Academy Logo" class="h-8 w-8 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+        </div>
+        <button class="p-2 text-on-surface" id="close-menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        </div>
+
+    <nav class="flex flex-col gap-8 p-10 mt-4">
+        <a class="text-2xl font-bold text-primary border-l-4 border-primary pl-4" href="index.html">Home</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="about.html" onclick="toggleMenu()">About</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#schools" onclick="toggleMenu()">Schools</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#how-it-works" onclick="toggleMenu()">Process</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#siep" onclick="toggleMenu()">SIEP</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#instructors" onclick="toggleMenu()">Instructors</a>
+        <div class="mt-8">
+        <a href="application_page.html" class="w-full btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg">Apply Now</a>
+        </div>
+    </nav>
+
+    </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+        <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+            <img alt="Sodbridge Academy Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain" src="assets/img/logo_main_plain.png"/>
+           <a href="index.html">
+ <span class="text-headline-md font-bold tracking-tighter text-primary">SODBRIDGE ACADEMY</span></a>
+            </div>
+            <span class="text-[10px] md:text-xs font-label-sm text-on-surface-variant uppercase tracking-widest pl-10 md:pl-12 -mt-1">A Subsidiary of Sodbridge</span>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary text-label-lg font-bold transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#schools">Schools</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#how-it-works">Process</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#siep">SIEP</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#instructors">Instructors</a>
+        </nav>
+        <div class="flex items-center gap-4">
+        <a href="application_page.html" class="hidden md:block btn bg-primary text-white px-6 py-2 rounded-lg font-bold text-label-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">Apply Now</a>
+        <button aria-label="Open menu" class="md:hidden p-2 text-primary" id="open-menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        </div>
+    </div>
+</header>
+
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-4xl mx-auto px-margin-mobile md:px-0 text-center mb-16">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+<span class="material-symbols-outlined text-secondary text-sm">verified_user</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase tracking-widest font-bold">Trust &amp; Security</span>
+</div>
+<h1 class="font-sora font-extrabold text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Privacy Policy</h1>
+<p class="font-hanken text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            At Sodbridge Academy, we are committed to protecting your privacy and ensuring the security of your personal data. This policy outlines how we collect, use, and safeguard your information.
+        </p>
+<div class="mt-8 flex flex-col items-center gap-2">
+<span class="text-on-surface-variant/70 font-label-mono text-sm">Last Updated: July 30, 2026</span>
+<div class="w-12 h-1 bg-primary/30 rounded-full"></div>
+</div>
+</section>
+<!-- Content Canvas -->
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-0 space-y-8">
+<!-- Information We Collect -->
+<div class="glass-card p-8 md:p-12">
+<div class="flex flex-col md:flex-row items-start gap-6">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">database</span>
+</div>
+<div>
+<h2 class="font-sora font-bold text-2xl text-on-surface mb-4">1. Information We Collect</h2>
+<div class="space-y-4 font-hanken text-on-surface-variant leading-relaxed">
+<p>To provide our industry-leading experience, we collect specific information including:</p>
+<ul class="list-none space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+<span><strong class="text-on-surface">Personal Details:</strong> Name, email address, contact number, and identification documents.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+<span><strong class="text-on-surface">Academic Background:</strong> Educational history, transcripts, and professional certifications.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+<span><strong class="text-on-surface">Usage Data:</strong> How you interact with our platform, IP addresses, and device information.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- How We Use Information -->
+<div class="glass-card p-8 md:p-12">
+<div class="flex flex-col md:flex-row items-start gap-6">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">insights</span>
+</div>
+<div>
+<h2 class="font-sora font-bold text-2xl text-on-surface mb-4">2. How We Use Your Information</h2>
+<p class="font-hanken text-on-surface-variant leading-relaxed">
+                        Your data enables us to maintain a high-performance learning environment. We use collected information for program delivery, personalized communication regarding academic progress, and continuous service improvement through anonymized feedback analysis.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Payment Information -->
+<div class="glass-card p-8 md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none">
+<span class="material-symbols-outlined text-9xl text-on-surface">payments</span>
+</div>
+<div class="flex flex-col md:flex-row items-start gap-6 relative z-10">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">lock</span>
+</div>
+<div>
+<h2 class="font-sora font-bold text-2xl text-on-surface mb-4">3. Payment Information</h2>
+<p class="font-hanken text-on-surface-variant leading-relaxed">
+                        Payments are securely processed through <span class="text-secondary font-bold">Paystack</span>. Sodbridge Academy does not store your credit card details or sensitive financial information on our own servers. All transactions are encrypted and handled by industry-certified payment providers.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Cookies & Data Protection Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Cookies -->
+<div class="glass-card p-8">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-xl">cookie</span>
+</div>
+<h3 class="font-sora font-bold text-xl text-on-surface mb-3">Cookies &amp; Analytics</h3>
+<p class="font-hanken text-on-surface-variant text-sm leading-relaxed">
+                    We use essential cookies to manage your session and anonymized tracking to understand platform performance. No sensitive personal data is stored in our cookies.
+                </p>
+</div>
+<!-- Data Protection -->
+<div class="glass-card p-8 border-secondary/10">
+<div class="w-10 h-10 rounded-lg bg-secondary/5 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-xl">shield</span>
+</div>
+<h3 class="font-sora font-bold text-xl text-on-surface mb-3">Data Protection</h3>
+<p class="font-hanken text-on-surface-variant text-sm leading-relaxed">
+                    We employ industry-standard AES-256 encryption and multi-layer security protocols to ensure your data remains confidential and protected from unauthorized access.
+                </p>
+</div>
+</div>
+<!-- Third-Party & Your Rights -->
+<div class="glass-card p-8 md:p-12">
+<div class="space-y-10">
+<div class="flex items-start gap-6">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">hub</span>
+</div>
+<div>
+<h3 class="font-sora font-bold text-xl text-on-surface mb-2">4. Third-Party Services</h3>
+<p class="font-hanken text-on-surface-variant text-sm leading-relaxed">
+                            Our platform integrates with essential learning tools and industry partners to facilitate your curriculum. These partners are vetted for compliance with global privacy standards.
+                        </p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">person_edit</span>
+</div>
+<div>
+<h3 class="font-sora font-bold text-xl text-on-surface mb-2">5. Your Rights</h3>
+<p class="font-hanken text-on-surface-variant text-sm leading-relaxed">
+                            You retain full ownership of your data. You have the legal right to access, correct, or request the permanent deletion of your personal information from our systems at any time.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact & CTA -->
+<div class="mt-20 glass-card p-12 text-center border-primary/10 shadow-[0_32px_64px_-16px_rgba(128,0,128,0.08)] bg-gradient-to-b from-white to-primary/5">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">contact_support</span>
+</div>
+<h2 class="font-sora font-bold text-3xl text-on-surface mb-4">Contact Information</h2>
+<p class="font-hanken text-on-surface-variant mb-10 max-w-lg mx-auto">
+                Have questions about your privacy? Reach out to our dedicated compliance team for immediate assistance.
+            </p>
+<a href="mailto:academy@sodbridge.com" class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/10 hover:shadow-primary/20">
+                Contact Us
+            </a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-white w-full py-20 border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-4 max-w-sm">
+    <div class="flex items-center gap-4">
+        <img alt="Sodbridge Academy Logo" class="h-12 w-12 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-2xl font-extrabold tracking-tight text-primary uppercase">SODBRIDGE ACADEMY</span>
+    </div><p class="text-lg font-medium text-on-surface-variant leading-relaxed">Empowering futures, unleashing innovations. A subsidiary of Sodbridge, dedicated to high-impact technical education across Africa.</p>
+
+ <div class="flex gap-4 mt-2">
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/company/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M20.447 20.452H16.89V14.87c0-1.332-.027-3.045-1.857-3.045-1.859 0-2.143 1.451-2.143 2.949v5.678H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M23.5 6.2a2.99 2.99 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A2.99 2.99 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 2.99 2.99 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a2.99 2.99 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+</svg>
+
+</a>
+
+<!-- Facebook -->
+<a href="https://web.facebook.com/sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M22 12A10 10 0 1 0 10.5 21.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+</svg>
+
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838A4 4 0 1 0 12 16a4 4 0 0 0 0-8zm6.406-2.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Academy</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="data_school.html">Data School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="dev_school.html">Dev School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="design_school.">Design School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="cyber_school.html">Cyber School</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="siep.html">SIEP</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://sodbridge.com">Visit Sodbridge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html#faqs">FAQ</a>
+</div>
+</div>
+</div>
+
+<div class="pt-8 mt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<p class="text-sm font-medium text-on-surface-variant">
+© <span id="currentYear"></span> Sodbridge Academy. Empowering futures, unleashing innovations.
+</p>
+
+<div class="flex gap-8">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy_policy.html">Privacy Policy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="terms_of_service.html">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+  <!-- Whats App Icon -->
+  <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#800080","ctaText":"Chat with us now","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"+2348145666602","welcomeMessage":"Hello","zIndex":999999,"btnColorScheme":"light"};
+          var wa_widgetSetting = {"title":"Customer Support","subTitle":"Typically replies within 1hr","headerBackgroundColor":"#800080","headerColorScheme":"dark","greetingText":"Hi there! \nHow may we help you?","ctaText":"Start Chat","btnColor":"#1A1A1A","cornerRadius":40,"welcomeMessage":"Hello","btnColorScheme":"light","brandImage":"https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg","darkHeaderColorScheme":{"title":"#ffffff","subTitle":"#4F4F4F"}};  
+          window.onload = () => {
+            _waEmbed(wa_btnSetting, wa_widgetSetting);
+          };
+  </script>
+
+<script>
+    // Year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile Menu Functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openMenuBtn = document.getElementById('open-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        }
+    }
+
+    openMenuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+
+    // Parallax effect for primary buttons
+    document.querySelectorAll('button.bg-primary').forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = button.getBoundingClientRect();
+            const x = (e.clientX - left - width / 2) / 10;
+            const y = (e.clientY - top - height / 2) / 10;
+            button.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = `translate(0, 0) scale(1)`;
+        });
+    });
+</script>
+</body></html>

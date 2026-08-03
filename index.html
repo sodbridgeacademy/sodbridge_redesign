@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sodbridge Academy | Empowering futures, unleashing innovations.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Favicon -->
+<link href="assets/img/logo_white.jpg" rel="shortcut icon"/>
+<!-- Author Meta -->
+<meta content="Sodbridge academy" name="author"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#800080",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#dce1ff",
+                    "on-secondary-fixed": "#002105",
+                    "outline-variant": "#cfc2d7",
+                    "surface-container-low": "#f3f2ff",
+                    "surface-tint": "#800080",
+                    "on-primary-container": "#f4e5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#6600b7",
+                    "secondary": "#16BE45",
+                    "surface": "#fbf8ff",
+                    "on-tertiary-container": "#e6e9ff",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-background": "#10193d",
+                    "on-tertiary-fixed": "#151a30",
+                    "surface-bright": "#fbf8ff",
+                    "surface-dim": "#d2d8ff",
+                    "secondary-fixed-dim": "#4ce264",
+                    "surface-container-high": "#e4e7ff",
+                    "secondary-container": "#68fc7a",
+                    "electric-violet": "#800080",
+                    "growth-green": "#16BE45",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c0c5e2",
+                    "inverse-primary": "#dbb8ff",
+                    "on-secondary-fixed-variant": "#005318",
+                    "on-tertiary-fixed-variant": "#40465d",
+                    "bg-offwhite": "#F8F9FC",
+                    "outline": "#7e7386",
+                    "on-surface": "#10193d",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#4c4354",
+                    "primary-fixed-dim": "#dbb8ff",
+                    "surface-deep": "#04091E",
+                    "surface-variant": "#dde1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#efdbff",
+                    "inverse-on-surface": "#f0efff",
+                    "tertiary-container": "#636881",
+                    "tertiary": "#4a5068",
+                    "on-primary-fixed": "#2b0052",
+                    "inverse-surface": "#262e53",
+                    "surface-container": "#ececff",
+                    "secondary-fixed": "#6eff7e",
+                    "background": "#fbf8ff",
+                    "text-muted": "#7B83AD",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#dde1ff",
+                    "primary": "#800080",
+                    "on-secondary-container": "#007324"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Sora"],
+                    "headline-lg-mobile": ["Sora"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "label-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Sora"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(4, 9, 30, 0.3) 0%, rgba(4, 9, 30, 0.85) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+            animation: scroll-left 40s linear infinite;
+        }
+        .animate-scroll-right {
+            animation: scroll-right 40s linear infinite;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #800080 0%, #16BE45 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-white">
+
+<!-- Mobile Navigation Menu -->
+<div class="fixed inset-0 z-[60] bg-white translate-x-full md:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center px-margin-mobile h-20 border-b border-outline-variant/30">
+        <div class="flex items-center gap-2">
+        <img alt="Sodbridge Academy Logo" class="h-8 w-8 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+        </div>
+        <button class="p-2 text-on-surface" id="close-menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        </div>
+
+    <nav class="flex flex-col gap-8 p-10 mt-4">
+        <a class="text-2xl font-bold text-primary border-l-4 border-primary pl-4" href="index.html">Home</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="about.html" onclick="toggleMenu()">About</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#schools" onclick="toggleMenu()">Schools</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#how-it-works" onclick="toggleMenu()">Process</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#siep" onclick="toggleMenu()">SIEP</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#instructors" onclick="toggleMenu()">Instructors</a>
+        <div class="mt-8">
+        <a href="application_page.html" class="w-full btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg">Apply Now</a>
+        </div>
+    </nav>
+
+    </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+        <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+            <img alt="Sodbridge Academy Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain" src="assets/img/logo_main_plain.png"/>
+           <a href="index.html">
+ <span class="text-headline-md font-bold tracking-tighter text-primary">SODBRIDGE ACADEMY</span></a>
+            </div>
+            <span class="text-[10px] md:text-xs font-label-sm text-on-surface-variant uppercase tracking-widest pl-10 md:pl-12 -mt-1">A Subsidiary of Sodbridge</span>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary text-label-lg font-bold transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#schools">Schools</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#how-it-works">Process</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#siep">SIEP</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#instructors">Instructors</a>
+        </nav>
+        <div class="flex items-center gap-4">
+        <a href="application_page.html" class="hidden md:block btn bg-primary text-white px-6 py-2 rounded-lg font-bold text-label-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">Apply Now</a>
+        <button aria-label="Open menu" class="md:hidden p-2 text-primary" id="open-menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        </div>
+    </div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[95vh] flex items-end pt-32 pb-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Professional diverse students collaborating in a high-tech learning environment" class="w-full h-full object-cover" src="assets/img/hero_bg.jpg" alt="Hero Image" />
+<div class="absolute inset-0 bg-black/40 z-[1]"></div>
+<div class="absolute inset-0 hero-gradient z-[2]"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-growth-green/20 text-growth-green rounded-full mb-6 border border-growth-green/30 backdrop-blur-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-growth-green opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-growth-green"></span>
+</span>
+<span class="text-label-sm font-bold uppercase tracking-wider">Cohort 4 Now Open</span>
+</div>
+<h1 class="font-display-lg text-4xl md:text-6xl text-white mb-4 leading-tight">
+    Build. Collaborate.<span class="text-secondary-fixed"> Get Hired.</span>
+</h1>
+<p class="font-headline-md text-white/90 mb-6 max-w-2xl">
+                    Data • Software Engineering • Design • Cybersecurity
+                </p>
+<div class="flex items-center gap-3 mb-10 text-white/80 font-body-lg italic">
+<span class="material-symbols-outlined text-primary">verified</span>
+                    Empowering futures, unleashing innovations.
+                </div>
+<div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<a href="application_page.html" class="bg-primary btn text-white px-10 py-5 rounded-xl font-bold shadow-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 group">
+                        Apply Now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="flex flex-col">
+<!-- <span class="text-white font-bold text-lg">Only ₦5,000 Application Fee</span> -->
+<!-- <span class="text-secondary-fixed text-sm">Top 30% get 50% off Level 2</span> -->
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- School Sections -->
+<section class="py-24 md:py-32 bg-white" id="schools">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 text-center md:text-left">
+<h2 class="font-headline-lg text-on-surface mb-4"><b>World-Class Technical Schools</b></h2>
+<p class="text-on-surface-variant font-medium text-lg max-w-2xl">Master skills built for the Nigerian ecosystem, Africa, and global markets. Choose your path to modern mastery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- School 1: Data School -->
+<a class="group block bg-surface border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2" href="data_school.html">
+<div class="h-48 relative overflow-hidden">
+<img alt="Data Analytics and SQL visualization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/img/datasch1.png"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase tracking-wider">Free Level 1</div>
+</div>
+<div class="p-6 flex flex-col h-44">
+<h3 class="font-headline-md text-on-surface mb-2">Data School</h3>
+<p class="text-on-surface-variant font-medium mb-4 line-clamp-2">Master SQL, Python, and PowerBI to unlock deep analytical insights.</p>
+<div class="mt-auto">
+<span class="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+</a>
+
+<!-- School 2: Dev School -->
+<a class="group block bg-surface border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2" href="dev_school.html">
+<div class="h-48 relative overflow-hidden">
+<img alt="Modern software engineering workspace" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/img/devsch1.png"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase tracking-wider">Free Level 1</div>
+</div>
+<div class="p-6 flex flex-col h-44">
+<h3 class="font-headline-md text-on-surface mb-2">Dev School</h3>
+<p class="text-on-surface-variant font-medium mb-4 line-clamp-2">Build powerful web applications with React, Node.js and Cloud infra.</p>
+<div class="mt-auto">
+<span class="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+</a>
+<!-- School 3: Design School -->
+<a class="group block bg-surface border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2" href="design_school.html">
+<div class="h-48 relative overflow-hidden">
+<img alt="UI/UX design mobile application prototype" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/img/designsch1.png"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase tracking-wider">Free Level 1</div>
+</div>
+<div class="p-6 flex flex-col h-44">
+<h3 class="font-headline-md text-on-surface mb-2">Design School</h3>
+<p class="text-on-surface-variant font-medium mb-4 line-clamp-2">Design stunning UI/UX and visual experiences that solve user problems.</p>
+<div class="mt-auto">
+<span class="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+</a>
+<!-- School 4: Cyber School -->
+<a class="group block bg-surface border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2" href="cyber_school.html">
+<div class="h-48 relative overflow-hidden">
+<img alt="Cybersecurity operations and network security" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/img/cybersch1.png"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase tracking-wider">Free Level 1</div>
+</div>
+<div class="p-6 flex flex-col h-44">
+<h3 class="font-headline-md text-on-surface mb-2">Cyber School</h3>
+<p class="text-on-surface-variant font-medium mb-4 line-clamp-2">Learn to defend digital assets and master ethical hacking techniques.</p>
+<div class="mt-auto">
+<span class="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- How It Works Section (Timeline) -->
+<section class="py-24 bg-surface-container-low border-y border-outline-variant/20" id="how-it-works">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-on-surface mb-4 uppercase"><b>How It Works</b></h2>
+<p class="text-on-surface-variant font-medium text-lg">Your step-by-step roadmap to professional tech mastery.</p>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 timeline-line rounded-full -translate-x-1/2"></div>
+<div class="space-y-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<h4 class="font-bold text-xl uppercase text-primary">Application</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">01</span>
+</div>
+<div class="w-full md:w-1/2 pl-12 pt-4 md:pt-0">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Application</h4></div>
+<p class="text-on-surface-variant font-medium">Pay ₦5,000 application fee to secure your eligibility.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pl-12 text-left">
+<h4 class="font-bold text-xl uppercase text-primary">Foundations</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">02</span>
+</div>
+<div class="w-full md:w-1/2 pr-12 pt-4 md:pt-0 md:text-right">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Foundations</h4></div>
+<p class="text-on-surface-variant font-medium">4 - 6 weeks intensive Level 1 bootcamp at no tuition cost.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<h4 class="font-bold text-xl uppercase text-primary">Assessment</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">03</span>
+</div>
+<div class="w-full md:w-1/2 pl-12 pt-4 md:pt-0">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Assessment</h4></div>
+<p class="text-on-surface-variant font-medium">Undergo rigorous testing to qualify for advanced training.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row-reverse items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pl-12 text-left">
+<h4 class="font-bold text-xl uppercase text-primary">Advanced</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">04</span>
+</div>
+<div class="w-full md:w-1/2 pr-12 pt-4 md:pt-0 md:text-right">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Advanced</h4></div>
+<p class="text-on-surface-variant font-medium">Level 2 deep-dive with specialist tools and workflows.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<h4 class="font-bold text-xl uppercase text-growth-green">Industry Experience (SIEP)</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-growth-green rounded-full shadow-lg shrink-0">
+<span class="text-growth-green font-bold text-lg">05</span>
+</div>
+<div class="w-full md:w-1/2 pl-12 pt-4 md:pt-0">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-growth-green">SIEP</h4></div>
+<p class="text-on-surface-variant font-medium">Join real product teams and work on live client solutions.</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col md:flex-row-reverse items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pl-12 text-left">
+<h4 class="font-bold text-xl uppercase text-primary">Certification</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">06</span>
+</div>
+<div class="w-full md:w-1/2 pr-12 pt-4 md:pt-0 md:text-right">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Certification</h4></div>
+<p class="text-on-surface-variant font-medium">Earn recognized credentials of technical excellence.</p>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<h4 class="font-bold text-xl uppercase text-primary">Career Support</h4>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 bg-white border-4 border-primary rounded-full shadow-lg shrink-0">
+<span class="text-primary font-bold text-lg">07</span>
+</div>
+<div class="w-full md:w-1/2 pl-12 pt-4 md:pt-0">
+<div class="md:hidden mb-1"><h4 class="font-bold text-lg uppercase text-primary">Career Support</h4></div>
+<p class="text-on-surface-variant font-medium">Interview prep, CV reviews, and job placement assistance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Beyond Learning: SIEP Section -->
+<section class="py-24 bg-white overflow-hidden relative" id="siep">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2 relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-growth-green/10 rounded-full blur-3xl"></div>
+<img alt="Students working on real-world projects" class="rounded-3xl shadow-2xl relative z-10" src="assets/img/siep1.png"/>
+<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl shadow-xl z-20 max-w-[200px]">
+<p class="text-3xl font-bold mb-1">SIEP</p>
+<p class="text-sm font-medium opacity-90 uppercase tracking-tighter leading-tight">Industry Experience Program</p>
+</div>
+</div>
+<div class="lg:w-1/2">
+<span class="text-primary font-bold text-sm uppercase tracking-widest mb-4 inline-block">Real-World Application</span>
+<h2 class="font-display-lg text-3xl md:text-5xl text-on-surface mb-8 leading-tight">Beyond Learning: Build Real Products Through <span class="text-primary">SIEP</span></h2>
+<p class="text-on-surface-variant font-medium text-lg mb-8">
+                        The Sodbridge Industry Experience Program (SIEP) is our bridge between classroom theory and real-world impact. Exceptional students are handpicked to join elite product squads.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-growth-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase">Real Products</h5>
+<p class="text-sm text-on-surface-variant">Contribute to live software and design systems.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-growth-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase">Client Solutions</h5>
+<p class="text-sm text-on-surface-variant">Solve actual business problems for global clients.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-growth-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase">Active Research</h5>
+<p class="text-sm text-on-surface-variant">Participate in cutting-edge tech and market research.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-growth-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase">Paid Internships</h5>
+<p class="text-sm text-on-surface-variant">Top performers earn while they continue to learn.</p>
+</div>
+</div>
+</div>
+<a href="siep.html"><button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Learn about SIEP</button></a>
+</div>
+</div>
+</div>
+
+<!-- Our Growing Ecosystem Section top -->
+<section class="py-32 relative overflow-hidden bg-gradient-to-br from-white to-[#FAF8FF]">
+<!-- Subtle Purple Glow Effects -->
+<div class="absolute -top-[150px] -left-[150px] w-[300px] h-[300px] bg-primary opacity-10 rounded-full blur-[150px]"></div>
+<div class="absolute -bottom-[150px] -right-[150px] w-[300px] h-[300px] bg-primary opacity-10 rounded-full blur-[150px]"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<!-- Header -->
+<div class="text-center mb-24">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/10">Our Growing Ecosystem</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-extrabold text-on-surface mb-6 uppercase tracking-tight">Trusted by Industry &amp; Community Partners</h2>
+<p class="text-on-surface-variant font-medium text-lg max-w-2xl mx-auto">We collaborate with forward-thinking startups, established NGOs, and global organizations to create a seamless bridge between education and employment.</p>
+</div>
+<!-- Logo Showcase Marquee -->
+<div class="flex flex-col gap-12 mb-24 overflow-hidden py-4">
+<!-- Top Row -->
+<div class="relative w-full flex overflow-hidden">
+    <div class="flex whitespace-nowrap animate-scroll-left">
+        <div class="flex gap-8 px-4 items-center">
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://www.jobberman.com/" target="_blank"><img alt="Jobberman" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/JobbermanNigeriaLogo2.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://goyishawu.com/" target="_blank"><img alt="GOY Foundation" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/GOY.jpeg"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://thchf.org/" target="_blank"><img alt="THCHF" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/thchf_logo.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://homefort.africa/" target="_blank"><img alt="Homefort Energy" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/homefort2.jpeg"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://interviewmaster.ai/" target="_blank"><img alt="Interview Master" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/interview_master_logo.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://loger.africa/" target="_blank"><img alt="Loger" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/loger_logo.png"/>
+            </a>
+        </div>
+        <div class="flex gap-8 px-4 items-center">
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://www.jobberman.com/" target="_blank"><img alt="Jobberman" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/JobbermanNigeriaLogo2.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://goyishawu.com/"><img alt="GOY Foundation" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/GOY.jpeg"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://thchf.org/"><img alt="THCHF" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/thchf_logo.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://homefort.africa/"><img alt="Homefort Energy" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/homefort2.jpeg"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://interviewmaster.ai/" target="_blank"><img alt="Interview Master" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/interview_master_logo.png"/></a>
+            <a class="glass-card flex items-center justify-center w-48 h-24 p-6 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-primary/10" href="https://loger.africa/ "><img alt="Loger" class="max-h-12 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="assets/img/partners/loger_logo.png"/></a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Feature Badges -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-container-max mx-auto">
+<div class="glass-card p-6 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<p class="font-bold text-sm text-on-surface uppercase">Industry Exposure</p>
+</div>
+<div class="glass-card p-6 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<p class="font-bold text-sm text-on-surface uppercase">Real-world Projects</p>
+</div>
+<div class="glass-card p-6 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<p class="font-bold text-sm text-on-surface uppercase">Mentorship</p>
+</div>
+<div class="glass-card p-6 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">work</span>
+</div>
+<p class="font-bold text-sm text-on-surface uppercase">Career Opportunities</p>
+</div>
+</div>
+<!-- Partner CTA Card -->
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="glass-card p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="max-w-xl">
+<h3 class="text-2xl md:text-3xl font-extrabold text-on-surface mb-4">Interested in partnering with Sodbridge Academy?</h3>
+<p class="text-on-surface-variant font-medium">Join our growing ecosystem and help shape the next generation of African tech leaders.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+<a href="https://forms.gle/sTR4bfPZEjyup71p7"><button class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all hover:-translate-y-1">Become a Partner</button></a>
+<!-- <a class="text-primary font-bold hover:underline" href="#">Learn More</a> -->
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Meet Our Instructors -->
+<section class="py-24 bg-white" id="instructors">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 text-center">
+<h2 class="font-headline-lg text-on-surface mb-4 uppercase"><b>Meet Some of Our Instructors<b></h2>
+<p class="text-on-surface-variant font-medium text-lg">Learn from industry veterans currently leading at top global tech firms.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Instructor 1 -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-lg transition-all duration-300">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 text-6xl">
+    <img src="assets/img/instructors/essien2.jpeg" style="height:50">
+</span>
+</div>
+<h4 class="font-bold text-xl text-on-surface uppercase">Essien Kosama</h4>
+<p class="text-primary font-bold text-sm mb-2 uppercase">Senior Product Designer</p>
+<p class="text-on-surface-variant text-sm font-medium">Passionate about creating accessible digital interfaces for the next billion users.</p>
+</div>
+
+<!-- Instructor 2 -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-lg transition-all duration-300">
+
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 text-6xl">
+    <img src="assets/img/instructors/idris3-remove.png">
+</span>
+</div>
+<a href="https://www.linkedin.com/in/idris-olalekan7/">
+<h4 class="font-bold text-xl text-on-surface uppercase">Idris Olalekan</h4>
+<p class="text-primary font-bold text-sm mb-2 uppercase">Senior Data Analytics</p>
+<p class="text-on-surface-variant text-sm font-medium">Microsoft Ceritfied Data Analyst in predictive modeling and business intelligence</p>
+</a>
+</div>
+
+<!-- Instructor 3 -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-lg transition-all duration-300">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 text-6xl">
+    <img src="assets/img/instructors/femi3.png">
+</span>
+</div>
+<h4 class="font-bold text-xl text-on-surface uppercase">Femi Elujoba</h4>
+<p class="text-primary font-bold text-sm mb-2 uppercase">Senior Software Engineer</p>
+<p class="text-on-surface-variant text-sm font-medium">6+ years experience building systems that disrupt with modern software technologies.</p>
+</div>
+
+<!-- Instructor 4 -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-lg transition-all duration-300">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 text-6xl">
+    <img src="assets/img/instructors/adekunle.jpeg">
+</span>
+</div>
+<h4 class="font-bold text-xl text-on-surface uppercase">Shadrack Omileke</h4>
+<p class="text-primary font-bold text-sm mb-2 uppercase">Cybersecurity Analyst</p>
+<p class="text-on-surface-variant text-sm font-medium">Dedicated to securing African digital landscapes through offensive security research.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 bg-primary text-white overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg mb-4 uppercase">Student Success Stories</h2>
+<p class="text-white/80 font-medium text-lg">Real stories from our thriving community.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white/10 p-10 rounded-2xl border border-white/10 italic relative">
+<span class="material-symbols-outlined text-4xl text-growth-green absolute -top-4 -left-4 bg-primary p-2">format_quote</span>
+<p class="mb-8 font-medium leading-relaxed">"The Level 1 bootcamp was the perfect introduction. I went from zero coding knowledge to building my first web app in 6 weeks. Sodbridge is a game-changer!"</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 rounded-full bg-growth-green text-primary flex items-center justify-center font-bold">TA</div>
+<div>
+<p class="font-bold uppercase">Tobi Adekunle</p>
+<p class="text-white/60 text-sm">Software Intern</p>
+</div>
+</div>
+</div>
+<div class="bg-white/10 p-10 rounded-2xl border border-white/10 italic relative">
+<span class="material-symbols-outlined text-4xl text-growth-green absolute -top-4 -left-4 bg-primary p-2">format_quote</span>
+<p class="mb-8 font-medium leading-relaxed">"The quality of instructors is unmatched. They don't just teach theory; they show you how tech is actually built in the industry. Highly recommend!"</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 rounded-full bg-growth-green text-primary flex items-center justify-center font-bold">SO</div>
+<div>
+<p class="font-bold uppercase">Sarah Obi</p>
+<p class="text-white/60 text-sm">UI/UX Student</p>
+</div>
+</div>
+</div>
+<div class="bg-white/10 p-10 rounded-2xl border border-white/10 italic relative">
+<span class="material-symbols-outlined text-4xl text-growth-green absolute -top-4 -left-4 bg-primary p-2">format_quote</span>
+<p class="mb-8 font-medium leading-relaxed">"Sodbridge Academy gave me the confidence to pursue a career in Data. The community support is amazing, even after the classes are over."</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 rounded-full bg-growth-green text-primary flex items-center justify-center font-bold">EU</div>
+<div>
+<p class="font-bold uppercase">Emeka Uzor</p>
+<p class="text-white/60 text-sm">Data Analyst</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Perks Bento Section -->
+<section class="py-24 bg-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Feature -->
+<div class="md:col-span-7 bg-gray-50 rounded-3xl p-10 md:p-16 relative overflow-hidden group border border-outline-variant/20">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-headline-lg text-on-surface mb-6 uppercase leading-tight">Designed for <br/><span class="text-primary underline decoration-growth-green decoration-4 underline-offset-8">Global Impact</span></h3>
+<p class="text-on-surface-variant font-medium text-lg mb-8 max-w-md">Our curriculum integrates Nigerian market insights with global standards, ensuring youths from Africa are ready for the world's most innovative tech roles.</p>
+<div class="mt-auto flex flex-wrap gap-4">
+<div class="bg-primary/5 text-primary px-4 py-2 rounded-lg font-bold border border-primary/10">Global Job Network</div>
+<div class="bg-primary/5 text-primary px-4 py-2 rounded-lg font-bold border border-primary/10">Global Mentorship</div>
+<div class="bg-primary/5 text-primary px-4 py-2 rounded-lg font-bold border border-primary/10">Remote Work Prep</div>
+</div>
+</div>
+</div>
+<!-- Small Features Stack -->
+<div class="md:col-span-5 grid grid-rows-2 gap-8">
+<div class="bg-primary rounded-3xl p-10 text-white relative overflow-hidden">
+<span class="material-symbols-outlined text-4xl mb-4 text-growth-green" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h4 class="font-bold text-2xl mb-2 uppercase">Accelerated Growth</h4>
+<p class="text-white/80 font-medium">Intensive curriculum designed to get you job-ready in months, not years.</p>
+</div>
+<div class="bg-growth-green rounded-3xl p-10 text-white flex items-center justify-between relative overflow-hidden group">
+<div>
+<h4 class="font-bold text-2xl mb-2 uppercase">100+ Community</h4>
+<p class="text-white/90 font-medium">Join over 10,000+ techies across Africa and beyond.</p>
+</div>
+<div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-white border-2 border-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-extrabold text-on-surface mb-8 uppercase tracking-tighter">Ready to start your tech journey?</h2>
+<p class="text-on-surface-variant text-xl md:text-2xl font-medium mb-12">Don't miss out on the next cohort. Join thousands of innovators building the future with Sodbridge Academy.</p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-8">
+<a class="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-xl hover:scale-105 transition-transform text-center" href="application_page.html">
+                            Apply for Bootcamp
+                        </a>
+<div class="flex flex-col items-center sm:items-start text-on-surface font-bold">
+<span class="text-sm uppercase tracking-widest text-on-surface-variant mb-1">For Enquiries</span>
+<a class="text-xl hover:text-primary transition-colors" href="tel:+2348145666602">+234 814 566 6602</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white w-full py-20 border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-4 max-w-sm">
+    <div class="flex items-center gap-4">
+        <img alt="Sodbridge Academy Logo" class="h-12 w-12 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-2xl font-extrabold tracking-tight text-primary uppercase">SODBRIDGE ACADEMY</span>
+    </div><p class="text-lg font-medium text-on-surface-variant leading-relaxed">Empowering futures, unleashing innovations. A subsidiary of Sodbridge, dedicated to high-impact technical education across Africa.</p>
+
+ <div class="flex gap-4 mt-2">
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/company/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M20.447 20.452H16.89V14.87c0-1.332-.027-3.045-1.857-3.045-1.859 0-2.143 1.451-2.143 2.949v5.678H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M23.5 6.2a2.99 2.99 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A2.99 2.99 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 2.99 2.99 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a2.99 2.99 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+</svg>
+
+</a>
+
+<!-- Facebook -->
+<a href="https://web.facebook.com/sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M22 12A10 10 0 1 0 10.5 21.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+</svg>
+
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838A4 4 0 1 0 12 16a4 4 0 0 0 0-8zm6.406-2.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Academy</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="data_school.html">Data School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="dev_school.html">Dev School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="design_school.">Design School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="cyber_school.html">Cyber School</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="siep.html">SIEP</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://sodbridge.com">Visit Sodbridge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html#faqs">FAQ</a>
+</div>
+</div>
+</div>
+
+<div class="pt-8 mt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<p class="text-sm font-medium text-on-surface-variant">
+© <span id="currentYear"></span> Sodbridge Academy. Empowering futures, unleashing innovations.
+</p>
+
+<div class="flex gap-8">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy_policy.html">Privacy Policy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="terms_of_service.html">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+  <!-- Whats App Icon -->
+  <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#800080","ctaText":"Chat with us now","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"+2348145666602","welcomeMessage":"Hello","zIndex":999999,"btnColorScheme":"light"};
+          var wa_widgetSetting = {"title":"Customer Support","subTitle":"Typically replies within 1hr","headerBackgroundColor":"#800080","headerColorScheme":"dark","greetingText":"Hi there! \nHow may we help you?","ctaText":"Start Chat","btnColor":"#1A1A1A","cornerRadius":40,"welcomeMessage":"Hello","btnColorScheme":"light","brandImage":"https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg","darkHeaderColorScheme":{"title":"#ffffff","subTitle":"#4F4F4F"}};  
+          window.onload = () => {
+            _waEmbed(wa_btnSetting, wa_widgetSetting);
+          };
+  </script>
+
+<script>
+    // Year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile Menu Functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openMenuBtn = document.getElementById('open-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        }
+    }
+
+    openMenuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+
+    // Parallax effect for primary buttons
+    document.querySelectorAll('button.bg-primary').forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = button.getBoundingClientRect();
+            const x = (e.clientX - left - width / 2) / 10;
+            const y = (e.clientY - top - height / 2) / 10;
+            button.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = `translate(0, 0) scale(1)`;
+        });
+    });
+</script>
+</body></html>

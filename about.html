@@ -1,0 +1,639 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | Sodbridge Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#800080",
+                    "secondary": "#16BE45",
+                    "primary-container": "#800080",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf8ff",
+                    "surface": "#fbf8ff",
+                    "on-surface": "#10193d",
+                    "on-surface-variant": "#4c4354",
+                    "outline-variant": "#cfc2d7",
+                    "surface-container-low": "#f3f2ff",
+                    "growth-green": "#16BE45",
+                    "electric-violet": "#800080",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "display": ["Sora"],
+                    "headline": ["Sora"],
+                    "body": ["Hanken Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #fbf8ff;
+            color: #10193d;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Sora', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(128, 0, 128, 0.1);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #800080 0%, #16BE45 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #800080 0%, #16BE45 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary selection:text-white">
+
+<!-- Mobile Navigation Menu -->
+<div class="fixed inset-0 z-[60] bg-white translate-x-full md:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center px-margin-mobile h-20 border-b border-outline-variant/30">
+        <div class="flex items-center gap-2">
+        <img alt="Sodbridge Academy Logo" class="h-8 w-8 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+        </div>
+        <button class="p-2 text-on-surface" id="close-menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        </div>
+
+    <nav class="flex flex-col gap-8 p-10 mt-4">
+        <a class="text-2xl font-bold text-primary border-l-4 border-primary pl-4" href="index.html">Home</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="about.html" onclick="toggleMenu()">About</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#schools" onclick="toggleMenu()">Schools</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#how-it-works" onclick="toggleMenu()">Process</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#siep" onclick="toggleMenu()">SIEP</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#instructors" onclick="toggleMenu()">Instructors</a>
+        <div class="mt-8">
+        <a href="application_page.html" class="w-full btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg">Apply Now</a>
+        </div>
+    </nav>
+
+    </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+        <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+            <img alt="Sodbridge Academy Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain" src="assets/img/logo_main_plain.png"/>
+           <a href="index.html">
+ <span class="text-headline-md font-bold tracking-tighter text-primary">SODBRIDGE ACADEMY</span></a>
+            </div>
+            <span class="text-[10px] md:text-xs font-label-sm text-on-surface-variant uppercase tracking-widest pl-10 md:pl-12 -mt-1">A Subsidiary of Sodbridge</span>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary text-label-lg font-bold transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#schools">Schools</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#how-it-works">Process</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#siep">SIEP</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#instructors">Instructors</a>
+        </nav>
+        <div class="flex items-center gap-4">
+        <a href="application_page.html" class="hidden md:block btn bg-primary text-white px-6 py-2 rounded-lg font-bold text-label-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">Apply Now</a>
+        <button aria-label="Open menu" class="md:hidden p-2 text-primary" id="open-menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        </div>
+    </div>
+</header>
+
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-growth-green/10 text-growth-green rounded-full mb-8 border border-growth-green/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-growth-green opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-growth-green"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-widest">Est. 2024</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-extrabold text-on-surface mb-8 max-w-5xl mx-auto leading-tight">
+                Building Africa's <span class="text-primary">Next Generation</span> of Technical Talent
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto mb-12 font-medium">
+                Sodbridge Academy is dedicated to empowering futures and unleashing innovations by bridging the gap between classroom theory and industry excellence.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<!-- <button class="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition-all">Explore Curriculum</button> -->
+<a href="#whoweare"><button class="w-full sm:w-auto border-2 border-primary text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all">Who We Are</button></a>
+</div>
+</div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="glass-card p-10 md:p-14 border-primary/10">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h2 class="text-3xl font-bold text-on-surface mb-6">Our Mission</h2>
+<p class="text-xl text-on-surface-variant font-medium leading-relaxed italic">
+                        "Empowering futures. Unleashing innovations."
+                    </p>
+</div>
+<div class="glass-card p-10 md:p-14 border-secondary/10">
+<div class="w-14 h-14 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl">visibility</span>
+</div>
+<h2 class="text-3xl font-bold text-on-surface mb-6">Our Vision</h2>
+<p class="text-lg text-on-surface-variant font-medium leading-relaxed">
+                        To be one of Africa’s most trusted communities for accessible, practical, and high-quality tech education—empowering individuals to build meaningful careers and become innovators in the global digital economy.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Are Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-white">
+<div class="max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-20">
+<div class="lg:w-1/2 relative">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full opacity-50"></div>
+<img alt="Diverse group of young African tech professionals collaborating" class="rounded-[2.5rem] shadow-2xl relative z-10 w-full object-cover aspect-[4/3]" src="assets/img/about1.jpg">
+<div class="absolute -bottom-8 -right-8 glass-card p-8 z-20 hidden md:block border-secondary/20">
+<div class="flex items-center gap-4">
+<div class="bg-secondary/10 p-3 rounded-full text-secondary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">90% Placement</p>
+<p class="text-on-surface-variant text-sm font-medium">Industry Rate</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lg:w-1/2" id="whoweare">
+<span class="text-primary font-bold text-sm uppercase tracking-widest mb-4 inline-block">The Academy</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface mb-8 leading-tight">Who We Are</h2>
+<div class="space-y-6 text-lg text-on-surface-variant font-medium leading-relaxed">
+<p class="">
+                        Sodbridge Academy is a Nigerian EdTech company dedicated to equipping teens, youths, and beginners with in-demand tech skills. We operate at the intersection of education and industry, ensuring our students aren't just "learned," but "ready."
+                    </p>
+<p class="">
+                        As a proud subsidiary of Sodbridge, we go beyond education to deliver wide-ranging tech solutions—from bespoke software development to technical consultancy—fueling the digital transformation of businesses across the continent.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-8 mt-12">
+<div class="p-6 bg-primary/5 rounded-2xl border border-primary/10">
+<p class="text-4xl font-bold text-primary mb-1">20+</p>
+<p class="text-on-surface-variant font-bold uppercase text-xs tracking-widest">Alumni</p>
+</div>
+<div class="p-6 bg-secondary/5 rounded-2xl border border-secondary/10">
+<p class="text-4xl font-bold text-secondary mb-1">100+</p>
+<p class="text-on-surface-variant font-bold uppercase text-xs tracking-widest">Community</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Journey Framework -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold text-on-surface mb-4">The Sodbridge Journey</h2>
+<p class="text-on-surface-variant font-medium text-lg max-w-2xl mx-auto">Our four-pillar framework designed to take you from a beginner to an industry-sought professional.</p>
+</div>
+<div class="relative">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-outline-variant/30 -translate-y-1/2 hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-6 z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="text-primary font-bold text-2xl">01</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-3">Learn</h3>
+<p class="text-on-surface-variant font-medium">Master foundational concepts with expert-led modules.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-6 z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="text-primary font-bold text-2xl">02</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-3">Build</h3>
+<p class="text-on-surface-variant font-medium">Apply knowledge through advance intensive project building.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-secondary flex items-center justify-center mb-6 z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="text-secondary font-bold text-2xl">03</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-3">Experience</h3>
+<p class="text-on-surface-variant font-medium">Work on live industry products through SIEP.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-secondary flex items-center justify-center mb-6 z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="text-secondary font-bold text-2xl">04</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-3">Launch</h3>
+<p class="text-on-surface-variant font-medium">Graduate with a portfolio and career support.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- IDEAS Framework (Core Values) -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-extrabold text-on-surface mb-4">The IDEAS Framework</h2>
+<p class="text-on-surface-variant text-lg font-medium">Our core values define the soul of Sodbridge Academy and guide every decision we make.</p>
+</div>
+<div class="font-bold text-primary bg-primary/5 px-6 py-3 rounded-full border border-primary/10 tracking-widest uppercase text-xs">
+                    OUR CORE VALUES
+                </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<!-- Integrity -->
+<div class="glass-card p-8 flex flex-col border-primary/10">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Integrity</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Honest and ethical behavior in every interaction, without exception.</p>
+</div>
+<!-- Discipline -->
+<div class="glass-card p-8 flex flex-col border-secondary/10">
+<div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Discipline</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Unwavering commitment to the rigorous process of learning and self-improvement.</p>
+</div>
+<!-- Empathy -->
+<div class="glass-card p-8 flex flex-col border-primary/10">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Excellence</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Always pushing boundaries and refusing to settle for mediocrity.</p>
+</div>
+<!-- Adaptability -->
+<div class="glass-card p-8 flex flex-col border-secondary/10">
+<div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schema</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Adaptability</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Embracing change and maintaining flexibility in a fast-paced landscape.</p>
+</div>
+<!-- Striving for Excellence -->
+<div class="glass-card p-8 flex flex-col border-primary/10">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Stewardship</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">We take ownership of our work, support our community, and create lasting impact beyond ourselves.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQs -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="faqs">
+  <div class="max-w-container-max mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold text-on-surface mb-4 uppercase tracking-tighter">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-on-surface-variant text-lg font-medium max-w-2xl mx-auto">
+        Everything you need to know before applying for a cohort.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+
+      <!-- FAQ 1 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            Who can apply to Sodbridge Academy?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          Our bootcampe are open to students, recent graduates, NYSC corp members, career changers, and professionals who are committed to learning. No prior experience is required for our foundational programs—only consistency and a willingness to grow.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            Which schools can I apply for?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          You can apply to one of our four schools: Data School, Development School, Design School, or Cybersecurity School. Each school has multiple specialization pathways to help you build industry-ready skills.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            How do I apply?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          Click <strong>Apply</strong>, review the admission information, complete the ₦5,000 application payment, and submit the required details. Once your application is received, our admissions team will review it and contact the applicants with the next steps.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            Is the ₦5,000 application fee refundable?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          No. The application fee covers admissions processing and is non-refundable. It is however credited to your tuition for the Advanced programme.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            What is SIEP?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          The Sodbridge Industry Experience Program (SIEP) is our post-training experience program where top graduates collaborate on real products, contribute to meaningful projects, work in cross-functional teams with industry experts, and build portfolios that demonstrate real industry experience.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            Does completing the Academy guarantee admission into SIEP?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          No. SIEP is competitive and merit-based. Admission depends on your technical ability, consistency, professionalism, collaboration, project contributions, and available capacity.
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            Are SIEP participants paid?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          Most participants join as SIEP Associates to gain real-world experience. Outstanding contributors may be recognized as SIEP Fellows and become eligible for merit-based stipends, subject to funding availability and program needs.
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="bg-white border border-outline-variant/30 rounded-2xl overflow-hidden shadow-sm">
+        <button class="w-full flex items-center justify-between p-6 text-left"
+          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').innerText=this.nextElementSibling.classList.contains('hidden')?'add':'remove'">
+          <span class="text-lg font-bold text-primary">
+            What happens after I submit my application?
+          </span>
+          <span class="material-symbols-outlined toggle-icon text-primary">add</span>
+        </button>
+
+        <div class="hidden px-6 pb-6 text-on-surface-variant font-medium leading-relaxed">
+          After payment and submission, you'll receive a confirmation email. Our admissions team will review your application and communicate the next steps, including screening, onboarding, and the new cohort commencement timelines.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="bg-white border-2 border-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-xl">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface mb-8 uppercase tracking-tighter">Ready to build your future?</h2>
+<p class="text-on-surface-variant text-lg md:text-xl font-medium mb-12">Join our next cohort and become part of a community that's reshaping the African tech ecosystem.</p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+<a href="application_page.html">
+<button class="w-full sm:w-auto bg-primary text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-xl hover:scale-105 transition-all">Apply Now</button></a>
+<!-- <button class="w-full sm:w-auto border-2 border-primary text-primary px-12 py-5 rounded-2xl font-bold text-xl hover:bg-primary/5 transition-all">Contact Admissions</button> -->
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-white w-full py-20 border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-4 max-w-sm">
+    <div class="flex items-center gap-4">
+        <img alt="Sodbridge Academy Logo" class="h-12 w-12 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-2xl font-extrabold tracking-tight text-primary uppercase">SODBRIDGE ACADEMY</span>
+    </div><p class="text-lg font-medium text-on-surface-variant leading-relaxed">Empowering futures, unleashing innovations. A subsidiary of Sodbridge, dedicated to high-impact technical education across Africa.</p>
+
+ <div class="flex gap-4 mt-2">
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/company/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M20.447 20.452H16.89V14.87c0-1.332-.027-3.045-1.857-3.045-1.859 0-2.143 1.451-2.143 2.949v5.678H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M23.5 6.2a2.99 2.99 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A2.99 2.99 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 2.99 2.99 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a2.99 2.99 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+</svg>
+
+</a>
+
+<!-- Facebook -->
+<a href="https://web.facebook.com/sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M22 12A10 10 0 1 0 10.5 21.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+</svg>
+
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838A4 4 0 1 0 12 16a4 4 0 0 0 0-8zm6.406-2.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Academy</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="data_school.html">Data School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="dev_school.html">Dev School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="design_school.html">Design School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="cyber_school.html">Cyber School</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="siep.html">SIEP</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://sodbridge.com">Visit Sodbridge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html#faqs">FAQ</a>
+</div>
+</div>
+</div>
+
+<div class="pt-8 mt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<p class="text-sm font-medium text-on-surface-variant">
+© <span id="currentYear"></span> Sodbridge Academy. Empowering futures, unleashing innovations.
+</p>
+
+<div class="flex gap-8">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy_policy.html">Privacy Policy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="terms_of_service.html">Terms of Service</a></div>
+</div>
+</div>
+</footer>
+
+  <!-- Whats App Icon -->
+  <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#800080","ctaText":"Chat with us now","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"+2348145666602","welcomeMessage":"Hello","zIndex":999999,"btnColorScheme":"light"};
+          var wa_widgetSetting = {"title":"Customer Support","subTitle":"Typically replies within 1hr","headerBackgroundColor":"#800080","headerColorScheme":"dark","greetingText":"Hi there! \nHow may we help you?","ctaText":"Start Chat","btnColor":"#1A1A1A","cornerRadius":40,"welcomeMessage":"Hello","btnColorScheme":"light","brandImage":"https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg","darkHeaderColorScheme":{"title":"#ffffff","subTitle":"#4F4F4F"}};  
+          window.onload = () => {
+            _waEmbed(wa_btnSetting, wa_widgetSetting);
+          };
+  </script>
+
+
+<script>
+    // Year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile Menu Functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openMenuBtn = document.getElementById('open-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        }
+    }
+
+    openMenuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+
+    // Parallax effect for primary buttons
+    document.querySelectorAll('button.bg-primary').forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = button.getBoundingClientRect();
+            const x = (e.clientX - left - width / 2) / 10;
+            const y = (e.clientY - top - height / 2) / 10;
+            button.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = `translate(0, 0) scale(1)`;
+        });
+    });
+</script>
+
+</body></html>
