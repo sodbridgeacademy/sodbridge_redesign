@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Application | Sodbridge Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --background: #fbf8ff;
+            --surface: #ffffff;
+            --primary: #800080;
+            --secondary: #4ce264;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(128, 0, 128, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+        .glass-card:hover {
+            border-color: rgba(128, 0, 128, 0.2);
+            box-shadow: 0 8px 40px rgba(128, 0, 128, 0.08);
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-up {
+            animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f7f2f9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#800080",
+                        "primary-fixed-dim": "#ffd7f5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#002105",
+                        "inverse-primary": "#ffaaf3",
+                        "surface-container-high": "#efe7f4",
+                        "on-primary-container": "#380038",
+                        "surface-container": "#f3edf7",
+                        "on-surface-variant": "#4d444c",
+                        "on-primary-fixed-variant": "#5b005b",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#380038",
+                        "secondary-fixed": "#6eff7e",
+                        "inverse-on-surface": "#f3edf7",
+                        "surface-variant": "#e9dfe8",
+                        "secondary-container": "#b7f397",
+                        "on-tertiary-container": "#1b1b1b",
+                        "background": "#fbf8ff",
+                        "outline-variant": "#d0c4cc",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-surface": "#1e1a1d",
+                        "surface": "#fbf8ff",
+                        "primary": "#800080",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#002105",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1e1a1d",
+                        "on-error": "#ffffff",
+                        "tertiary": "#5e5e5e",
+                        "tertiary-container": "#e2e2e2",
+                        "secondary-fixed-dim": "#4ce264",
+                        "primary-container": "#ffd7f5",
+                        "on-secondary-fixed-variant": "#005318",
+                        "on-error-container": "#410002",
+                        "surface-container-highest": "#e9e1ef",
+                        "surface-bright": "#fbf8ff",
+                        "secondary": "#2d6b26",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#342f32",
+                        "outline": "#7e747c",
+                        "tertiary-fixed-dim": "#c6c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1200px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Sora", "sans-serif"],
+                        "body": ["Hanken Grotesk", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/20 selection:text-primary">
+
+<!-- Background Effects -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute top-[20%] -right-[5%] w-[40%] h-[40%] bg-secondary/5 blur-[100px] rounded-full"></div>
+</div>
+
+<!-- Mobile Navigation Menu -->
+<div class="fixed inset-0 z-[60] bg-white translate-x-full md:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center px-margin-mobile h-20 border-b border-outline-variant/30">
+        <div class="flex items-center gap-2">
+        <img alt="Sodbridge Academy Logo" class="h-8 w-8 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-xl font-bold tracking-tighter text-primary">SODBRIDGE</span>
+        </div>
+        <button class="p-2 text-on-surface" id="close-menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        </div>
+
+    <nav class="flex flex-col gap-8 p-10 mt-4">
+        <a class="text-2xl font-bold text-primary border-l-4 border-primary pl-4" href="index.html">Home</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="about.html" onclick="toggleMenu()">About</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#schools" onclick="toggleMenu()">Schools</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#how-it-works" onclick="toggleMenu()">Process</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#siep" onclick="toggleMenu()">SIEP</a>
+        <a class="text-2xl font-medium text-on-surface-variant hover:text-primary pl-4" href="index.html#instructors" onclick="toggleMenu()">Instructors</a>
+        <div class="mt-8">
+        <a href="application_page.html" class="w-full btn bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg">Apply Now</a>
+        </div>
+    </nav>
+
+    </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+        <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+            <img alt="Sodbridge Academy Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain" src="assets/img/logo_main_plain.png"/>
+           <a href="index.html">
+ <span class="text-headline-md font-bold tracking-tighter text-primary">SODBRIDGE ACADEMY</span></a>
+            </div>
+            <span class="text-[10px] md:text-xs font-label-sm text-on-surface-variant uppercase tracking-widest pl-10 md:pl-12 -mt-1">A Subsidiary of Sodbridge</span>
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary text-label-lg font-bold transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#schools">Schools</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#how-it-works">Process</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#siep">SIEP</a>
+        <a class="text-on-surface-variant hover:text-primary text-label-lg font-medium transition-colors duration-200" href="index.html#instructors">Instructors</a>
+        </nav>
+        <div class="flex items-center gap-4">
+        <a href="https://forms.gle/1QHzEorJ5bkGN9Ry6" class="hidden md:block btn bg-primary text-white px-6 py-2 rounded-lg font-bold text-label-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">Apply Now</a>
+        <button aria-label="Open menu" class="md:hidden p-2 text-primary" id="open-menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        </div>
+    </div>
+</header>
+
+<main class="relative z-10 pt-32 pb-margin-desktop">
+
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+<!-- =========================================================
+HERO
+========================================================== -->
+
+<section class="mb-20 md:mb-28">
+
+    <div class="text-center max-w-4xl mx-auto animate-up">
+
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full
+        bg-secondary/10 border border-secondary/20 text-secondary
+        font-label-mono text-xs font-bold mb-6">
+
+            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse mr-2"></span>
+
+            COHORT 4 • YOUR JOURNEY STARTS HERE
+
+        </span>
+
+        <h1 class="font-headline text-4xl md:text-6xl mb-8
+        tracking-tight font-extrabold text-on-surface leading-[1.1]">
+
+            Start Your Journey with
+            <span class="text-primary">
+                Sodbridge Academy
+            </span>
+
+        </h1>
+
+        <p class="text-lg text-on-surface-variant mb-10
+        max-w-3xl mx-auto leading-relaxed">
+
+            Whether you're completely new to technology or already have
+            some experience, choose the learning pathway that best fits
+            where you are today.
+
+        </p>
+
+    </div>
+
+
+    <!-- =========================================================
+    TWO PATHWAYS
+    ========================================================== -->
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- FOUNDATIONS -->
+
+        <div class="glass-card rounded-[40px] p-8 md:p-10
+        border border-primary/20 relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 w-32 h-32
+            bg-primary/10 blur-[60px] rounded-full"></div>
+
+            <div class="relative z-10">
+
+                <div class="flex items-center justify-between mb-8">
+
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10
+                    flex items-center justify-center">
+
+                        <span class="material-symbols-outlined
+                        text-primary text-3xl">
+                            school
+                        </span>
+
+                    </div>
+
+                    <span class="px-4 py-2 rounded-full
+                    bg-primary/10 text-primary text-xs
+                    font-bold uppercase tracking-wider">
+
+                        Beginner Friendly
+
+                    </span>
+
+                </div>
+
+
+                <h2 class="font-headline text-3xl font-extrabold
+                text-on-surface mb-4">
+
+                    Foundations
+
+                </h2>
+
+
+                <p class="text-on-surface-variant leading-relaxed mb-8">
+
+                    Build practical technology skills from the ground up
+                    through our weekly public Foundations sessions.
+
+                </p>
+
+
+                <div class="space-y-4 mb-8">
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Free weekly learning sessions
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Beginner-friendly curriculum
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Learn through YouTube
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Optional structured-learning pathway
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bg-surface-container-low rounded-2xl
+                p-5 mb-8">
+
+                    <p class="text-xs uppercase tracking-widest
+                    font-bold text-primary mb-2">
+
+                        Optional Structured Learning
+
+                    </p>
+
+                    <p class="text-on-surface-variant text-sm
+                    leading-relaxed">
+
+                        Pay a one-time ₦5,000 fee if you want a more
+                        structured learning experience, additional
+                        guidance and a Foundations certificate.
+
+                        The full ₦5,000 is credited toward eligible
+                        Advanced Programme tuition.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://forms.gle/p72pSuEPDhL72QYx5"
+                    class="w-full bg-primary text-on-primary px-8 py-4
+                    rounded-2xl font-bold text-lg transition-all
+                    hover:shadow-xl hover:shadow-primary/25
+                    flex items-center justify-center gap-2"
+                >
+
+                    Join Foundations
+
+                    <span class="material-symbols-outlined text-xl">
+                        arrow_forward
+                    </span>
+
+                </a>
+
+
+                <p class="text-center text-xs text-on-surface-variant mt-4">
+
+                    Prefer the free pathway?
+                    Follow our YouTube Foundations sessions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADVANCED -->
+
+        <div class="glass-card rounded-[40px] p-8 md:p-10
+        border border-secondary/20 relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 w-32 h-32
+            bg-secondary/10 blur-[60px] rounded-full"></div>
+
+            <div class="relative z-10">
+
+                <div class="flex items-center justify-between mb-8">
+
+                    <div class="w-14 h-14 rounded-2xl bg-secondary/10
+                    flex items-center justify-center">
+
+                        <span class="material-symbols-outlined
+                        text-secondary text-3xl">
+                            workspace_premium
+                        </span>
+
+                    </div>
+
+                    <span class="px-4 py-2 rounded-full
+                    bg-secondary/10 text-secondary text-xs
+                    font-bold uppercase tracking-wider">
+
+                        Professional
+
+                    </span>
+
+                </div>
+
+
+                <h2 class="font-headline text-3xl font-extrabold
+                text-on-surface mb-4">
+
+                    Advanced Programmes
+
+                </h2>
+
+
+                <p class="text-on-surface-variant leading-relaxed mb-8">
+
+                    Develop deeper technical skills through intensive,
+                    project-based training, mentorship and professional
+                    workflows.
+
+                </p>
+
+
+                <div class="space-y-4 mb-8">
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Intensive professional training
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Practical projects and assessments
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Industry-relevant tools and workflows
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+                        <span class="material-symbols-outlined
+                        text-secondary">
+                            check_circle
+                        </span>
+
+                        <span class="text-on-surface-variant">
+                            Professional certificate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bg-surface-container-low rounded-2xl
+                p-5 mb-8">
+
+                    <p class="text-xs uppercase tracking-widest
+                    font-bold text-secondary mb-2">
+
+                        Who Can Apply?
+
+                    </p>
+
+                    <p class="text-on-surface-variant text-sm
+                    leading-relaxed">
+
+                        Foundations graduates are encouraged to progress
+                        into Advanced. However, learners with relevant
+                        prior knowledge or experience may apply directly
+                        and complete a readiness assessment.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://forms.gle/p72pSuEPDhL72QYx5"
+                    class="w-full bg-secondary text-on-secondary px-8 py-4
+                    rounded-2xl font-bold text-lg transition-all
+                    hover:shadow-xl hover:shadow-secondary/25
+                    flex items-center justify-center gap-2"
+                >
+
+                    Apply for Advanced
+
+                    <span class="material-symbols-outlined text-xl">
+                        arrow_forward
+                    </span>
+
+                </a>
+
+
+                <p class="text-center text-xs text-on-surface-variant mt-4">
+
+                    Eligibility and programme requirements apply.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+HOW TO BEGIN
+========================================================== -->
+
+<section class="mb-28">
+
+    <div class="text-center mb-12">
+
+        <h2 class="font-headline text-3xl md:text-4xl
+        font-extrabold mb-4">
+
+            How to Begin
+
+        </h2>
+
+        <div class="w-20 h-1.5 bg-primary rounded-full mx-auto"></div>
+
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+        <!-- STEP 1 -->
+
+        <div class="glass-card p-8 rounded-[32px]
+        flex flex-col">
+
+            <div class="w-14 h-14 rounded-2xl bg-primary/10
+            flex items-center justify-center mb-8">
+
+                <span class="text-primary font-bold text-xl">
+                    01
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Choose Your Path
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Start with Foundations if you're building your
+                knowledge from scratch, or apply directly for
+                Advanced if you already have relevant experience.
+
+            </p>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="glass-card p-8 rounded-[32px]
+        flex flex-col">
+
+            <div class="w-14 h-14 rounded-2xl bg-secondary/10
+            flex items-center justify-center mb-8">
+
+                <span class="text-secondary font-bold text-xl">
+                    02
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Learn & Demonstrate
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Participate in Foundations or complete the Advanced
+                readiness process and demonstrate that you are
+                prepared for the next stage.
+
+            </p>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="glass-card p-8 rounded-[32px]
+        flex flex-col">
+
+            <div class="w-14 h-14 rounded-2xl bg-primary/10
+            flex items-center justify-center mb-8">
+
+                <span class="text-primary font-bold text-xl">
+                    03
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Progress
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Progress into Advanced training, build practical
+                projects, earn your professional certificate and
+                pursue further industry experience opportunities.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+WHAT TO KNOW
+========================================================== -->
+
+<section class="mb-28">
+
+    <div class="text-center mb-12">
+
+        <h2 class="font-headline text-3xl md:text-4xl
+        font-extrabold mb-4">
+
+            Before You Begin
+
+        </h2>
+
+        <div class="w-20 h-1.5 bg-primary rounded-full mx-auto"></div>
+
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+        <!-- CARD 1 -->
+
+        <div class="glass-card p-8 rounded-[32px]">
+
+            <div class="w-14 h-14 rounded-2xl bg-primary/10
+            flex items-center justify-center mb-8">
+
+                <span class="material-symbols-outlined text-primary text-2xl">
+                    person
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Eligibility
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Anyone passionate about developing technology skills
+                can join Foundations. No prior experience is required.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="glass-card p-8 rounded-[32px]">
+
+            <div class="w-14 h-14 rounded-2xl bg-secondary/10
+            flex items-center justify-center mb-8">
+
+                <span class="material-symbols-outlined text-secondary text-2xl">
+                    menu_book
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Foundations
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Weekly Foundations sessions are free on YouTube.
+                Structured learning is optional and costs ₦5,000.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="glass-card p-8 rounded-[32px]">
+
+            <div class="w-14 h-14 rounded-2xl bg-primary/10
+            flex items-center justify-center mb-8">
+
+                <span class="material-symbols-outlined text-primary text-2xl">
+                    workspace_premium
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Certificates
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Foundations certificates are available to structured
+                learners who successfully complete the programme
+                requirements.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div class="glass-card p-8 rounded-[32px]">
+
+            <div class="w-14 h-14 rounded-2xl bg-secondary/10
+            flex items-center justify-center mb-8">
+
+                <span class="material-symbols-outlined text-secondary text-2xl">
+                    trending_up
+                </span>
+
+            </div>
+
+            <h4 class="font-headline font-bold text-xl mb-4">
+                Progression
+            </h4>
+
+            <p class="text-on-surface-variant
+            leading-relaxed text-sm">
+
+                Foundations prepares learners for Advanced. Prior
+                experience may allow eligible learners to apply
+                directly for Advanced.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+FAQ
+========================================================== -->
+
+<section class="mb-28">
+
+    <div class="max-w-3xl mx-auto">
+
+        <h2 class="font-headline text-3xl font-extrabold mb-10">
+            Frequently Asked Questions
+        </h2>
+
+
+        <div class="space-y-4">
+
+
+            <!-- FAQ 1 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+                open
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        Is Foundations really free?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    Yes. Our weekly public Foundations sessions are
+                    available free through the Sodbridge Academy
+                    YouTube channel.
+
+                    An optional ₦5,000 structured-learning pathway is
+                    available for learners who want additional support,
+                    structure and a Foundations certificate.
+
+                </div>
+
+            </details>
+
+
+
+            <!-- FAQ 2 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        What does the ₦5,000 cover?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    The ₦5,000 is an optional structured-learning fee.
+                    It provides learners with a more organized learning
+                    experience, additional guidance and access to the
+                    structured Foundations pathway.
+
+                    The full ₦5,000 is credited toward tuition if you
+                    later enrol in an eligible Advanced Programme.
+
+                </div>
+
+            </details>
+
+
+
+            <!-- FAQ 3 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        Can I apply directly for Advanced?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    Yes. Foundations is recommended for beginners,
+                    but learners with relevant prior knowledge,
+                    education or experience may apply directly.
+
+                    Direct applicants may be required to complete a
+                    readiness assessment before admission.
+
+                </div>
+
+            </details>
+
+
+
+            <!-- FAQ 4 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        Do I receive a certificate from Foundations?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    Foundations certificates are available to learners
+                    enrolled in the optional structured-learning pathway
+                    who successfully complete the programme requirements.
+
+                    Learners who participate through the free public
+                    YouTube sessions do not automatically receive a
+                    certificate.
+
+                </div>
+
+            </details>
+
+
+
+            <!-- FAQ 5 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        What happens after Foundations?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    Learners who successfully complete the Foundations
+                    pathway can progress toward an Advanced Programme.
+
+                    The Advanced Programme is more intensive and
+                    focuses on deeper technical skills, practical
+                    projects and professional workflows.
+
+                </div>
+
+            </details>
+
+
+
+            <!-- FAQ 6 -->
+
+            <details
+                class="group glass-card rounded-2xl overflow-hidden
+                border border-black/5"
+            >
+
+                <summary
+                    class="flex justify-between items-center p-6
+                    cursor-pointer list-none hover:bg-black/5
+                    transition-colors"
+                >
+
+                    <span class="font-bold text-lg">
+                        Who can join Sodbridge Academy?
+                    </span>
+
+                    <span class="material-symbols-outlined
+                    transition-transform group-open:rotate-180">
+                        expand_more
+                    </span>
+
+                </summary>
+
+
+                <div class="px-6 pb-6 text-on-surface-variant
+                leading-relaxed">
+
+                    Our programmes are open to students, recent
+                    graduates, NYSC corps members, career changers,
+                    professionals and anyone committed to developing
+                    practical technology skills.
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+SUPPORT
+========================================================== -->
+
+<section class="mb-28">
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="glass-card rounded-[40px] p-10
+        border border-primary/20">
+
+            <h3 class="font-headline text-2xl font-bold mb-4">
+                Need Help Choosing a Path?
+            </h3>
+
+            <p class="text-on-surface-variant mb-8
+            leading-relaxed font-medium">
+
+                Not sure whether to start with Foundations or apply
+                directly for Advanced? Our team can help you determine
+                the pathway that best fits your current experience.
+
+            </p>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+
+                <a
+                    class="flex items-center gap-4 p-4 rounded-2xl
+                    bg-white border border-transparent
+                    hover:border-primary/10 hover:bg-primary/5
+                    transition-all"
+                    href="mailto:academy@sodbridge.com"
+                >
+
+                    <div class="w-12 h-12 rounded-xl bg-primary/10
+                    flex items-center justify-center">
+
+                        <span class="material-symbols-outlined text-primary">
+                            mail
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-[10px] text-on-surface-variant
+                        uppercase font-bold tracking-widest
+                        font-label-mono">
+
+                            Email
+
+                        </p>
+
+                        <p class="font-bold text-sm">
+                            academy@sodbridge.com
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="flex items-center gap-4 p-4 rounded-2xl
+                    bg-white border border-transparent
+                    hover:border-secondary/10 hover:bg-secondary/5
+                    transition-all"
+                    href="tel:+23481456666602"
+                >
+
+                    <div class="w-12 h-12 rounded-xl bg-secondary/10
+                    flex items-center justify-center">
+
+                        <span class="material-symbols-outlined text-secondary">
+                            call
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-[10px] text-on-surface-variant
+                        uppercase font-bold tracking-widest
+                        font-label-mono">
+
+                            Call
+
+                        </p>
+
+                        <p class="font-bold text-sm">
+                            +234-81456666602
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="flex items-center gap-4 p-4 rounded-2xl
+                    bg-white border border-transparent
+                    hover:border-secondary/10 hover:bg-secondary/5
+                    transition-all"
+                    href="https://wa.me/2347080491060"
+                >
+
+                    <div class="w-12 h-12 rounded-xl bg-secondary/10
+                    flex items-center justify-center">
+
+                        <span class="material-symbols-outlined text-secondary">
+                            chat
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-[10px] text-on-surface-variant
+                        uppercase font-bold tracking-widest
+                        font-label-mono">
+
+                            WhatsApp
+
+                        </p>
+
+                        <p class="font-bold text-sm">
+                            +234-7080491060
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+FINAL CTA
+========================================================== -->
+
+<section class="mt-20">
+
+    <div class="glass-card rounded-[48px] p-12 md:p-24
+    text-center relative overflow-hidden group border-none
+    bg-primary text-white">
+
+        <div class="absolute inset-0 bg-gradient-to-br
+        from-primary via-primary/90 to-[#600060]"></div>
+
+
+        <div class="absolute top-0 right-0 w-64 h-64
+        bg-white/10 blur-[100px] rounded-full
+        -translate-y-1/2 translate-x-1/2"></div>
+
+
+        <div class="absolute bottom-0 left-0 w-64 h-64
+        bg-secondary/20 blur-[100px] rounded-full
+        translate-y-1/2 -translate-x-1/2"></div>
+
+
+        <div class="relative z-10 max-w-2xl mx-auto">
+
+            <h2 class="font-headline text-4xl md:text-5xl
+            font-extrabold mb-8 leading-tight">
+
+                Ready to Start Learning?
+
+            </h2>
+
+
+            <p class="text-lg md:text-xl text-white/80
+            mb-12 font-medium">
+
+                Start with Foundations for free, choose the
+                structured pathway when you're ready, or apply
+                directly for an Advanced Programme if you already
+                have the required experience.
+
+            </p>
+
+
+            <div class="flex flex-col sm:flex-row
+            items-center justify-center gap-4">
+
+                <a
+                    href="https://forms.gle/1QHzEorJ5bkGN9Ry6"
+                    class="bg-white text-primary px-8 py-5
+                    rounded-2xl font-extrabold text-lg
+                    active:scale-95 transition-all
+                    hover:shadow-2xl inline-flex items-center gap-3"
+                >
+
+                    Structured Foundations
+
+                    <span class="material-symbols-outlined font-bold">
+                        arrow_forward
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="https://forms.gle/1QHzEorJ5bkGN9Ry6"
+                    class="border-2 border-white/30 text-white
+                    px-8 py-5 rounded-2xl font-extrabold text-lg
+                    hover:bg-white/10 transition-all
+                    inline-flex items-center gap-3"
+                >
+
+                    Apply for Advanced
+
+                    <span class="material-symbols-outlined font-bold">
+                        workspace_premium
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+</main>
+
+
+<!-- Footer (Academy Style) -->
+
+<!-- Footer -->
+<footer class="bg-white w-full py-20 border-t border-outline-variant/30">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-4 max-w-sm">
+    <div class="flex items-center gap-4">
+        <img alt="Sodbridge Academy Logo" class="h-12 w-12 object-contain" src="assets/img/logo_main_plain.png"/>
+        <span class="text-2xl font-extrabold tracking-tight text-primary uppercase">SODBRIDGE ACADEMY</span>
+    </div><p class="text-lg font-medium text-on-surface-variant leading-relaxed">Empowering futures, unleashing innovations. A subsidiary of Sodbridge, dedicated to high-impact technical education across Africa.</p>
+
+ <div class="flex gap-4 mt-2">
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/company/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M20.447 20.452H16.89V14.87c0-1.332-.027-3.045-1.857-3.045-1.859 0-2.143 1.451-2.143 2.949v5.678H9.333V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.456v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M23.5 6.2a2.99 2.99 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A2.99 2.99 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 2.99 2.99 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a2.99 2.99 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+</svg>
+
+</a>
+
+<!-- Facebook -->
+<a href="https://web.facebook.com/sodbridgeacademy"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M22 12A10 10 0 1 0 10.5 21.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+</svg>
+
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/sodbridgeacademy/"
+   target="_blank"
+   class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838A4 4 0 1 0 12 16a4 4 0 0 0 0-8zm6.406-2.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+</svg>
+
+</a>
+
+</div>
+
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Academy</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="data_school.html">Data School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="dev_school.html">Dev School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="design_school.html">Design School</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="cyber_school.html">Cyber School</a>
+</div>
+<div class="flex flex-col gap-6">
+<h5 class="text-on-surface font-extrabold text-label-lg uppercase tracking-widest">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="siep.html">SIEP</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://sodbridge.com">Visit Sodbridge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="about.html#faqs">FAQ</a>
+</div>
+</div>
+</div>
+
+<div class="pt-8 mt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<p class="text-sm font-medium text-on-surface-variant">
+© <span id="currentYear"></span> Sodbridge Academy. Empowering futures, unleashing innovations.
+</p>
+
+<div class="flex gap-8">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy_policy.html">Privacy Policy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="terms_of_service.html">Terms of Service</a></div>
+</div>
+</div>
+</footer>
+
+  <!-- Whats App Icon -->
+  <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#800080","ctaText":"Chat with us now","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"+2348145666602","welcomeMessage":"Hello","zIndex":999999,"btnColorScheme":"light"};
+          var wa_widgetSetting = {"title":"Customer Support","subTitle":"Typically replies within 1hr","headerBackgroundColor":"#800080","headerColorScheme":"dark","greetingText":"Hi there! \nHow may we help you?","ctaText":"Start Chat","btnColor":"#1A1A1A","cornerRadius":40,"welcomeMessage":"Hello","btnColorScheme":"light","brandImage":"https://i.pinimg.com/736x/de/59/4e/de594ec09881da3fa66d98384a3c72ff.jpg","darkHeaderColorScheme":{"title":"#ffffff","subTitle":"#4F4F4F"}};  
+          window.onload = () => {
+            _waEmbed(wa_btnSetting, wa_widgetSetting);
+          };
+  </script>
+
+
+<script>
+    // Year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile Menu Functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openMenuBtn = document.getElementById('open-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    function toggleMenu() {
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        }
+    }
+
+    openMenuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+
+    // Parallax effect for primary buttons
+    document.querySelectorAll('button.bg-primary').forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = button.getBoundingClientRect();
+            const x = (e.clientX - left - width / 2) / 10;
+            const y = (e.clientY - top - height / 2) / 10;
+            button.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = `translate(0, 0) scale(1)`;
+        });
+    });
+
+    // Simple Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+</script>
+</body></html>
